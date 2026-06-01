@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FEFBF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+
+<script>
+  // Apply persisted theme before paint to avoid flash. Default = light.
+  (function () {
+    var t = localStorage.getItem('rewbi-theme');
+    document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+  })();
+</script>
+
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &mdash; REWBI{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* og */}}
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — REWBI{{ end }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="REWBI">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="{{ "/opengraph.png" | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="REWBI — Real Estate &amp; Wealth Building Institute">
+
+{{/* twitter */}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — REWBI{{ end }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="twitter:image" content="{{ "/opengraph.png" | absURL }}">
+
+{{ with resources.Get "logos/favicon.svg" }}
+  {{ $favicon := . | fingerprint }}
+<link rel="icon" href="{{ $favicon.RelPermalink }}" type="image/svg+xml">
+{{ end }}
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="REWBI">
+<link rel="mask-icon" href="/mask-icon.svg" color="#610D2E">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+
+{{/* font preload */}}
+{{- $cgMedium  := resources.Get "fonts/cormorant/CormorantGaramond-Medium.woff2" | fingerprint -}}
+{{- $interReg := resources.Get "fonts/inter/Inter-Regular.woff2" | fingerprint -}}
+<link rel="preload" as="font" type="font/woff2" href="{{ $cgMedium.RelPermalink }}" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="{{ $interReg.RelPermalink }}" crossorigin>
+
+{{/* hero preload */}}
+{{ if .IsHome }}
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="/images/hero-skyline-mobile.webp 768w, /images/hero-skyline.webp 1920w"
+      imagesizes="100vw">
+{{ end }}
+
+{{/* css pipeline */}}
+{{- $tokens     := resources.Get "css/tokens.css" -}}
+{{- $typography := resources.Get "css/typography.css" | resources.ExecuteAsTemplate "css/typography.rendered.css" . -}}
+{{- $components := resources.Get "css/components.css" -}}
+{{- $main       := resources.Get "css/main.css" -}}
+{{- $css        := slice $tokens $typography $components $main | resources.Concat "css/app.css" | resources.Minify | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+{{/* schema */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ "/#organization" | absURL }}",
+      "name": "Real Estate & Wealth Building Institute",
+      "alternateName": "REWBI",
+      "url": "{{ "/" | absURL }}",
+      "logo": "{{ "/logos/footer-logo.png" | absURL }}",
+      "description": {{ .Site.Params.description | jsonify }},
+      "founder": { "@id": "{{ "/#farrah" | absURL }}" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ "/#farrah" | absURL }}",
+      "name": "Farrah Ali",
+      "jobTitle": "Real Estate Investor, Author, Coach",
+      "description": "WSJ best-selling author and real estate investor who began investing while raising two children as a single working mother.",
+      "worksFor": { "@id": "{{ "/#organization" | absURL }}" },
+      "sameAs": [
+        "https://www.amazon.com/Diaries-Female-Real-Estate-Investor/dp/1736549189/"{{ with .Site.Params.social.facebook }},
+        "{{ . }}"{{ end }}{{ with .Site.Params.social.instagram }},
+        "{{ . }}"{{ end }}{{ with .Site.Params.social.linkedin }},
+        "{{ . }}"{{ end }}{{ with .Site.Params.social.youtube }},
+        "{{ . }}"{{ end }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ "/#website" | absURL }}",
+      "url": "{{ "/" | absURL }}",
+      "name": "REWBI",
+      "publisher": { "@id": "{{ "/#organization" | absURL }}" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+{{ partial "nav.html" . }}
+
+<main id="main" tabindex="-1">
+  {{ block "main" . }}{{ end }}
+</main>
+
+{{ partial "footer.html" . }}
+
+<a href="#nav" class="fab fab-small scroll-top" id="scrollTop" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+  </svg>
+</a>
+
+<button type="button" class="fab fab-small theme-toggle" id="themeToggle" aria-label="Toggle dark theme" aria-pressed="false">
+  <svg class="theme-toggle-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <circle cx="12" cy="12" r="4" stroke-width="2"></circle>
+    <path stroke-linecap="round" stroke-width="2" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+  </svg>
+  <svg class="theme-toggle-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</button>
+
+{{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+
+{{ $themeJs := resources.Get "js/theme-toggle.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $themeJs.RelPermalink }}" integrity="{{ $themeJs.Data.Integrity }}" defer></script>
+
+{{ partial "event-popup.html" . }}
+
+</body>
+</html>

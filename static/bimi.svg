@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.2" baseProfile="tiny-ps" viewBox="0 0 878 878" xmlns="http://www.w3.org/2000/svg">
+  <title>REWBI</title>
+  <defs>
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="349.30481" y1="951.94458" x2="349.30481" y2="545.23352">
+      <stop offset="0" stop-color="#F4C688" />
+      <stop offset="1" stop-color="#986822" />
+    </linearGradient>
+    <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="753.78638" y1="941.01508" x2="753.78638" y2="361.01709">
+      <stop offset="0" stop-color="#F4C688" />
+      <stop offset="1" stop-color="#986822" />
+    </linearGradient>
+  </defs>
+  <rect width="878" height="878" fill="#FFF8EC" />
+  <!-- scale 0.7 about viewBox center (439,439); replaces old translate(-201,-73). -->
+  <g transform="translate(439 439) scale(0.7) translate(-640 -512)">
+    <polygon points="249.8,950.8 249.8,680.1 448.8,531.6 448.8,585.1 292.6,701.3 292.6,950.8" fill="url(#SVGID_1_)" />
+    <polygon points="776,73.2 776,416.6 732.3,384 732.3,159.8 534.5,306.8 534.5,950.8 491,950.8 491,285.1" fill="#610D2E" />
+    <polygon points="895.9,558.2 895.9,950.8 852.4,950.8 852.4,579.1 653.9,430.9 653.9,950.8 611.7,950.8 611.7,346.6" fill="url(#SVGID_2_)" />
+    <polygon points="938,697.1 938,642.5 1030.2,712.1 1030.2,950.8 987,950.8 987,733.2" fill="#610D2E" />
+  </g>
+</svg>

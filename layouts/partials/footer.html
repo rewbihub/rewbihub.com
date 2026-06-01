@@ -1,0 +1,107 @@
+<footer class="site-footer">
+  <div class="site-footer-inner">
+
+    {{ with resources.Get "logos/favicon.svg" }}
+      {{ $footerLogo := . | fingerprint }}
+    <div class="site-footer-brand">
+      <a href="/" class="site-footer-brand-link" aria-label="REWBI home">
+        <img src="{{ $footerLogo.RelPermalink }}" alt="REWBI" width="140" height="46" decoding="async" loading="lazy">
+      </a>
+    {{ else }}
+    <div class="site-footer-brand">
+      <a href="/" class="site-footer-brand-link" aria-label="REWBI home">
+        <img src="/logos/footer-logo.png" alt="REWBI" width="140" height="46" decoding="async" loading="lazy">
+      </a>
+    {{ end }}
+      <p class="md-body-medium site-footer-tagline">Real Estate &amp; Wealth Building Institute</p>
+      <p class="md-body-small site-footer-mission">Practical real estate education designed to help everyday people build long-term wealth.</p>
+
+      {{ $s := .Site.Params.social }}
+      {{ if or $s.facebook $s.instagram $s.linkedin $s.youtube $s.github }}
+      <ul class="site-footer-social" aria-label="Follow REWBI on social media">
+        {{ with $s.facebook }}
+          {{ $icon := resources.Get "icons/facebook.svg" }}
+          <li>
+            <a class="icon-button site-footer-social-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="REWBI on Facebook (opens in new window)">
+              <span aria-hidden="true">{{ $icon.Content | safeHTML }}</span>
+            </a>
+          </li>
+        {{ end }}
+        {{ with $s.instagram }}
+          {{ $icon := resources.Get "icons/instagram.svg" }}
+          <li>
+            <a class="icon-button site-footer-social-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="REWBI on Instagram (opens in new window)">
+              <span aria-hidden="true">{{ $icon.Content | safeHTML }}</span>
+            </a>
+          </li>
+        {{ end }}
+        {{ with $s.linkedin }}
+          {{ $icon := resources.Get "icons/linkedin.svg" }}
+          <li>
+            <a class="icon-button site-footer-social-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="REWBI on LinkedIn (opens in new window)">
+              <span aria-hidden="true">{{ $icon.Content | safeHTML }}</span>
+            </a>
+          </li>
+        {{ end }}
+        {{ with $s.youtube }}
+          {{ $icon := resources.Get "icons/youtube.svg" }}
+          <li>
+            <a class="icon-button site-footer-social-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="REWBI on YouTube (opens in new window)">
+              <span aria-hidden="true">{{ $icon.Content | safeHTML }}</span>
+            </a>
+          </li>
+        {{ end }}
+        {{ with $s.github }}
+          {{ $icon := resources.Get "icons/github.svg" }}
+          <li>
+            <a class="icon-button site-footer-social-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="REWBI on GitHub (opens in new window)">
+              <span aria-hidden="true">{{ $icon.Content | safeHTML }}</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+
+    <div class="site-footer-cols">
+
+      <nav class="site-footer-col" aria-labelledby="ft-col-explore">
+        <h2 class="md-title-small site-footer-col-title" id="ft-col-explore">Explore</h2>
+        <ul class="site-footer-list">
+          <li><a href="/"             class="site-footer-link">Home</a></li>
+          <li><a href="/about"        class="site-footer-link">About REWBI</a></li>
+          <li><a href="/about-farrah" class="site-footer-link">About Farrah</a></li>
+          <li><a href="/course"       class="site-footer-link">Course</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer-col" aria-labelledby="ft-col-resources">
+        <h2 class="md-title-small site-footer-col-title" id="ft-col-resources">Resources</h2>
+        <ul class="site-footer-list">
+          <li><a href="/events"  class="site-footer-link">Upcoming Events</a></li>
+          <li><a href="/contact" class="site-footer-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer-col" aria-labelledby="ft-col-account">
+        <h2 class="md-title-small site-footer-col-title" id="ft-col-account">Account</h2>
+        <ul class="site-footer-list">
+          <li><a href="{{ .Site.Params.loginUrl }}" class="site-footer-link" rel="noopener">Login</a></li>
+          <li><a href="https://course.rewbihub.com" rel="noopener" target="_blank" class="site-footer-link">Course Platform<span class="visually-hidden"> (opens in new window)</span></a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </div>
+
+  <div class="site-footer-bottom">
+    <p class="md-body-small">&copy; {{ now.Year }} REWBI. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<a href="#top" class="fab fab-small scroll-top" id="scrollTop" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+  </svg>
+</a>

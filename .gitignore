@@ -1,0 +1,9 @@
+resources/
+.hugo_build.lock
+*.bak
+*~
+.DS_Store
+secrets/
+*.secret
+images/
+public/

@@ -1,0 +1,73 @@
+{{ define "main" }}
+
+{{/* hero */}}
+<section class="page-hero">
+  <div class="section-inner page-hero-inner">
+    <p class="eyebrow">About</p>
+    <h1 class="md-display-medium page-hero-title">Real estate education that actually works.</h1>
+    <p class="md-body-large page-hero-lede">A clear, practical curriculum for everyday people &mdash; built by someone who&rsquo;s done it.</p>
+  </div>
+</section>
+
+{{/* prose */}}
+<section class="section prose-section">
+  <div class="section-inner content-narrow">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+{{/* pillars */}}
+<section class="section pillars section-alt">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow">What makes us different</p>
+      <h2 class="md-headline-large section-title">Four principles, no exceptions.</h2>
+    </header>
+
+    <ul class="pillar-grid">
+
+      <li class="pillar md-card md-card-filled">
+        <span class="pillar-num md-label-large" aria-hidden="true">01</span>
+        <h3 class="md-title-large pillar-title">Practical, not theoretical</h3>
+        <p class="md-body-medium pillar-body">Every module is built around a real action you take this week &mdash; analyze a deal, run comps, write an offer. No abstract lectures.</p>
+      </li>
+
+      <li class="pillar md-card md-card-filled">
+        <span class="pillar-num md-label-large" aria-hidden="true">02</span>
+        <h3 class="md-title-large pillar-title">Honest about results</h3>
+        <p class="md-body-medium pillar-body">Real estate works if you do the work. We tell you what&rsquo;s required up front, including the parts most courses skip.</p>
+      </li>
+
+      <li class="pillar md-card md-card-filled">
+        <span class="pillar-num md-label-large" aria-hidden="true">03</span>
+        <h3 class="md-title-large pillar-title">Built for normal lives</h3>
+        <p class="md-body-medium pillar-body">You don&rsquo;t need to quit your job, get a license, or have a six-figure savings to start. We assume the opposite.</p>
+      </li>
+
+      <li class="pillar md-card md-card-filled">
+        <span class="pillar-num md-label-large" aria-hidden="true">04</span>
+        <h3 class="md-title-large pillar-title">Real support, not bots</h3>
+        <p class="md-body-medium pillar-body">Hybrid format &mdash; go at your pace, but check in with humans when you&rsquo;re stuck. No Discord noise, no auto-replies.</p>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+{{/* cta */}}
+<section class="section cta-band" aria-labelledby="about-cta-heading">
+  <div class="section-inner">
+    <div class="cta-card">
+      <h2 class="md-display-small cta-title" id="about-cta-heading">Ready to see if it&rsquo;s a fit?</h2>
+      <p class="md-body-large cta-sub">Tell us about your goals and we&rsquo;ll be in touch.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="md-button md-button-filled md-button-large">Apply Today</a>
+        <a href="/about-farrah" class="md-button md-button-outlined md-button-large">Meet Farrah</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

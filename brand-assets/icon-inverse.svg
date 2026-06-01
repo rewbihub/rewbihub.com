@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="249 73 782 878" width="782" height="878"><defs>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="349.3048" y1="951.9446" x2="349.3048" y2="545.2335">
+<stop offset="0" stop-color="#9A3454"></stop>
+<stop offset="1" stop-color="#610D2E"></stop>
+</linearGradient>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="753.7864" y1="941.0151" x2="753.7864" y2="361.0171">
+<stop offset="0" stop-color="#9A3454"></stop>
+<stop offset="1" stop-color="#610D2E"></stop>
+</linearGradient>
+</defs><polygon fill="url(#SVGID_1_)" points="448.8,531.6 448.8,585.1 292.6,701.3 292.6,950.8 249.8,950.8 249.8,680.1"></polygon><polygon fill="#C69755" points="776,73.2 776,416.6 732.3,384 732.3,159.8 534.5,306.8 534.5,950.8 491,950.8 491,285.1"></polygon><polygon fill="url(#SVGID_2_)" points="895.9,558.2 895.9,950.8 852.4,950.8 852.4,579.1 653.9,430.9 653.9,950.8 611.7,950.8 611.7,346.6"></polygon><polygon fill="#C69755" points="1030.2,712.1 1030.2,950.8 987,950.8 987,733.2 938,697.1 938,642.5"></polygon></svg>

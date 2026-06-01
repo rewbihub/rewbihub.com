@@ -1,0 +1,19 @@
+{{ if and .Site.Params.showEventPopup .IsHome }}
+<div id="event-popup" role="dialog" aria-modal="true" aria-labelledby="event-popup-label">
+  <div class="event-popup-surface md-card md-card-elevated">
+    <button id="event-popup-close" type="button" class="icon-button event-popup-close" aria-label="Close announcement">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <a href="{{ .Site.Params.eventPopupLink }}" target="_blank" rel="noopener noreferrer" class="event-popup-link">
+      <span id="event-popup-label" class="visually-hidden">Event announcement &mdash; tap to open signup</span>
+      <img src="{{ .Site.Params.eventPopupImage | relURL }}" alt="Event signup" loading="lazy" decoding="async">
+    </a>
+  </div>
+</div>
+{{ $css := resources.Get "css/event-popup.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ $js := resources.Get "js/event-popup.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

@@ -1,0 +1,59 @@
+{{ define "main" }}
+
+{{/* hero */}}
+<section class="page-hero">
+  <div class="section-inner page-hero-inner">
+    <p class="eyebrow">Media</p>
+    <h1 class="md-display-medium page-hero-title">Where Farrah has been featured.</h1>
+    <p class="md-body-large page-hero-lede">{{ .Content | plainify }}</p>
+  </div>
+</section>
+
+{{/* grid */}}
+<section class="section media-section">
+  <div class="section-inner">
+    {{ if hugo.Data.media }}
+      <ul class="media-grid">
+        {{ range hugo.Data.media }}
+          <li>
+            {{ if .url }}
+              <a href="{{ .url }}" class="media-card md-card md-card-elevated" target="_blank" rel="noopener noreferrer">
+            {{ else }}
+              <article class="media-card md-card md-card-elevated">
+            {{ end }}
+
+            {{ if .image }}
+              <div class="media-art">
+                <img src="{{ .image }}" alt="{{ .title }}" width="600" height="600" loading="lazy" decoding="async">
+              </div>
+            {{ end }}
+            <div class="media-body">
+              <p class="md-label-large media-source">{{ .source }}</p>
+              <h2 class="md-headline-small media-title">{{ .title }}</h2>
+              {{ with .description }}<p class="md-body-medium media-desc">{{ . }}</p>{{ end }}
+              {{ if .url }}
+                <span class="md-label-large media-link">
+                  Listen / Read
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                  </svg>
+                  <span class="visually-hidden">(opens in new window)</span>
+                </span>
+              {{ end }}
+            </div>
+
+            {{ if .url }}</a>{{ else }}</article>{{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <div class="empty-state md-card md-card-filled">
+        <p class="md-headline-small empty-state-title">No media features yet.</p>
+        <p class="md-body-large empty-state-sub">Check back soon, or get in touch about an interview.</p>
+        <a href="/contact" class="md-button md-button-outlined">Contact</a>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

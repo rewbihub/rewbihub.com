@@ -1,0 +1,263 @@
+{{ define "main" }}
+
+{{/* hero */}}
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <picture>
+      <source srcset="/images/hero-skyline-mobile.webp" media="(max-width: 768px)" type="image/webp">
+      <source srcset="/images/hero-skyline-mobile.jpg"  media="(max-width: 768px)" type="image/jpeg">
+      <source srcset="/images/hero-skyline.webp" type="image/webp">
+      <img src="/images/hero-skyline.jpg" alt="" decoding="async" fetchpriority="high">
+    </picture>
+    <div class="hero-scrim"></div>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow hero-eyebrow">Real Estate &amp; Wealth Building Institute</p>
+    <h1 class="md-display-large hero-title">Build wealth that&nbsp;lasts.</h1>
+    <p class="md-body-large hero-sub">A clear, step-by-step system for real estate investing. Built for people with no experience, no license, and no idea where to start.</p>
+    <div class="hero-actions">
+      <a href="{{ .Site.Params.applyUrl }}" class="md-button md-button-filled md-button-large">Apply Today</a>
+      <a href="#course" class="md-button md-button-outlined md-button-large md-button-on-dark">See the course</a>
+    </div>
+    <p class="md-body-medium hero-meta">Taught by <a href="/about-farrah" class="hero-meta-link">Farrah Ali</a> &middot; WSJ best-selling author &middot; 100+ properties transacted</p>
+  </div>
+</section>
+
+{{/* steps */}}
+<section class="section steps" id="how-it-works">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2 class="md-headline-large section-title">A real estate course that actually helps you start.</h2>
+      <p class="md-body-large section-lede">Walk through every real step &mdash; analyzing deals, running comps, making offers, finding funding. No fluff.</p>
+    </header>
+
+    <ol class="step-grid">
+      <li class="step-card md-card md-card-filled">
+        <img class="step-card-art" src="/images/steps/1.png" alt="" role="presentation" width="120" height="120" loading="lazy" decoding="async">
+        <h3 class="md-title-large step-card-title">Pick a strategy that fits your life</h3>
+      </li>
+      <li class="step-card md-card md-card-filled">
+        <img class="step-card-art" src="/images/steps/2.png" alt="" role="presentation" width="120" height="120" loading="lazy" decoding="async">
+        <h3 class="md-title-large step-card-title">Find good areas to invest in</h3>
+      </li>
+      <li class="step-card md-card md-card-filled">
+        <img class="step-card-art" src="/images/steps/3.png" alt="" role="presentation" width="120" height="120" loading="lazy" decoding="async">
+        <h3 class="md-title-large step-card-title">Get properties under contract</h3>
+      </li>
+      <li class="step-card md-card md-card-filled">
+        <img class="step-card-art" src="/images/steps/4.png" alt="" role="presentation" width="120" height="120" loading="lazy" decoding="async">
+        <h3 class="md-title-large step-card-title">Analyze the numbers and avoid bad deals</h3>
+      </li>
+      <li class="step-card md-card md-card-filled">
+        <img class="step-card-art" src="/images/steps/5.png" alt="" role="presentation" width="120" height="120" loading="lazy" decoding="async">
+        <h3 class="md-title-large step-card-title">Work with contractors and understand rehab costs</h3>
+      </li>
+      <li class="step-card md-card md-card-filled">
+        <img class="step-card-art" src="/images/steps/6.png" alt="" role="presentation" width="120" height="120" loading="lazy" decoding="async">
+        <h3 class="md-title-large step-card-title">Build a plan for long-term income</h3>
+      </li>
+    </ol>
+  </div>
+</section>
+
+{{/* modules */}}
+<section class="section modules section-alt" id="course">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow">Online Course</p>
+      <h2 class="md-headline-large section-title">What you&rsquo;ll learn.</h2>
+      <p class="md-body-large section-lede">Build real estate skills, investment confidence, and long-term wealth through a guided course.</p>
+    </header>
+
+    <ul class="module-grid">
+
+      <li>
+        <a href="/course" class="module-card md-card md-card-elevated">
+          <div class="module-card-art">
+            <img src="/images/modules/real-estate-101.png" alt="" role="presentation" width="360" height="240" loading="lazy" decoding="async">
+          </div>
+          <div class="module-card-body">
+            <h3 class="md-title-large module-card-title">Real Estate 101</h3>
+            <p class="md-body-medium module-card-desc">Understand the language, process, and systems behind every smart real estate investment.</p>
+          </div>
+          <svg class="module-card-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </li>
+
+      <li>
+        <a href="/course" class="module-card md-card md-card-elevated">
+          <div class="module-card-art">
+            <img src="/images/modules/property-analysis.png" alt="" role="presentation" width="360" height="240" loading="lazy" decoding="async">
+          </div>
+          <div class="module-card-body">
+            <h3 class="md-title-large module-card-title">Property Analysis &amp; Comps</h3>
+            <p class="md-body-medium module-card-desc">Evaluate deals, run numbers, and calculate rehab costs &mdash; with or without a realtor.</p>
+          </div>
+          <svg class="module-card-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </li>
+
+      <li>
+        <a href="/course" class="module-card md-card md-card-elevated">
+          <div class="module-card-art">
+            <img src="/images/modules/portfolio-strategy.png" alt="" role="presentation" width="360" height="240" loading="lazy" decoding="async">
+          </div>
+          <div class="module-card-body">
+            <h3 class="md-title-large module-card-title">Portfolio Strategy</h3>
+            <p class="md-body-medium module-card-desc">Long-term, mid-term, and short-term rentals &mdash; how to choose what fits your goals.</p>
+          </div>
+          <svg class="module-card-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </li>
+
+      <li>
+        <a href="/course" class="module-card md-card md-card-elevated">
+          <div class="module-card-art">
+            <img src="/images/modules/financial-freedom.png" alt="" role="presentation" width="360" height="240" loading="lazy" decoding="async">
+          </div>
+          <div class="module-card-body">
+            <h3 class="md-title-large module-card-title">Financial Freedom Planning</h3>
+            <p class="md-body-medium module-card-desc">Build a roadmap to retirement and calculate exactly what you need to replace your income.</p>
+          </div>
+          <svg class="module-card-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+{{/* instructor */}}
+<section class="section instructor" id="farrah">
+  <div class="section-inner instructor-inner">
+    <div class="instructor-photo">
+      <img src="/images/farrah/headshot.jpg" alt="Farrah Ali" width="480" height="600" loading="lazy" decoding="async">
+    </div>
+    <div class="instructor-body">
+      <p class="eyebrow">Your Instructor</p>
+      <h2 class="md-headline-large instructor-name">Farrah Ali</h2>
+      <p class="md-body-large">WSJ best-selling author, real estate investor, and certified life and success coach. Farrah began investing while raising two children as a single working mother in the insurance industry &mdash; and built a portfolio that let her retire from her corporate career.</p>
+      <p class="md-body-large">She wrote <em>Diaries of a Female Real Estate Investor</em> to inspire others to invest in real estate, and trained through IBCP to become a certified life and success coach. Today she teaches what worked.</p>
+      <a href="/about-farrah" class="md-button md-button-tonal">Read her story</a>
+    </div>
+  </div>
+</section>
+
+{{/* podcasts */}}
+<section class="section podcasts section-alt">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow">Podcasts</p>
+      <h2 class="md-headline-large section-title">Where Farrah has been featured.</h2>
+      <p class="md-body-large section-lede">Recent interviews on real estate investing, mindset, and financial freedom.</p>
+    </header>
+    <ul class="podcast-grid">
+      <li>
+        <a href="/media" class="podcast-card md-card md-card-elevated">
+          <div class="podcast-card-art">
+            <img src="/images/podcasts/podcast-1.jpg" alt="" role="presentation" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="podcast-card-body">
+            <p class="md-label-large podcast-card-source">Straight Up Chicago Investor</p>
+            <h3 class="md-title-large podcast-card-title">How a Single Mom Created a Real Estate Empire Across Chicagoland</h3>
+            <span class="md-label-large podcast-card-cta">
+              Listen
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/media" class="podcast-card md-card md-card-elevated">
+          <div class="podcast-card-art">
+            <img src="/images/podcasts/podcast-2.png" alt="" role="presentation" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="podcast-card-body">
+            <p class="md-label-large podcast-card-source">Farrah Ali Podcast</p>
+            <h3 class="md-title-large podcast-card-title">Real Estate Investing Educational Segments</h3>
+            <span class="md-label-large podcast-card-cta">
+              Listen
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+            </span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{{/* gallery */}}
+<section class="section gallery">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow">Before &amp; After</p>
+      <h2 class="md-headline-large section-title">Renovation projects.</h2>
+      <p class="md-body-large section-lede">A look at properties Farrah&rsquo;s team has acquired, rehabbed, and held or sold.</p>
+    </header>
+    <ul class="gallery-grid">
+      <li class="gallery-item"><img src="/images/renovations/1.png" alt="Renovation project" width="600" height="450" loading="lazy" decoding="async"></li>
+      <li class="gallery-item"><img src="/images/renovations/2.png" alt="Renovation project" width="600" height="450" loading="lazy" decoding="async"></li>
+      <li class="gallery-item"><img src="/images/renovations/3.png" alt="Renovation project" width="600" height="450" loading="lazy" decoding="async"></li>
+      <li class="gallery-item"><img src="/images/renovations/4.png" alt="Renovation project" width="600" height="450" loading="lazy" decoding="async"></li>
+      <li class="gallery-item"><img src="/images/renovations/5.png" alt="Renovation project" width="600" height="450" loading="lazy" decoding="async"></li>
+      <li class="gallery-item"><img src="/images/renovations/6.png" alt="Renovation project" width="600" height="450" loading="lazy" decoding="async"></li>
+    </ul>
+  </div>
+</section>
+
+{{/* apply */}}
+<section class="section apply-cta" aria-labelledby="apply-cta-heading">
+  <div class="section-inner">
+    <div class="apply-cta-card">
+      <p class="eyebrow apply-cta-eyebrow">Apply</p>
+      <h2 class="md-display-small apply-cta-title" id="apply-cta-heading">Ready to start?</h2>
+      <p class="md-body-large apply-cta-lede">Tell us about your goals and we&rsquo;ll make sure the course is the right fit.</p>
+      <div class="apply-cta-actions">
+        <a href="/contact" class="md-button md-button-filled md-button-large">Apply for the course</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* faq */}}
+<section class="section faq section-alt">
+  <div class="section-inner faq-inner">
+    <header class="section-head section-head-narrow">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="md-headline-large section-title">Common questions.</h2>
+    </header>
+
+    <ul class="faq-list">
+      <li class="faq-item">
+        <details>
+          <summary class="md-title-large faq-summary">
+            <span>Why can&rsquo;t I just buy the course now?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="md-body-large faq-body">This isn&rsquo;t a one-size-fits-all program. The form makes sure the course actually fits your goals, schedule, and stage. If it&rsquo;s a good match, we&rsquo;ll walk you through the next steps.</p>
+        </details>
+      </li>
+      <li class="faq-item">
+        <details>
+          <summary class="md-title-large faq-summary">
+            <span>Are results guaranteed?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="md-body-large faq-body">You get the full structure, tools, and support to succeed &mdash; but you have to do the work. It&rsquo;s not magic, it&rsquo;s a system. If you follow it and take action, it works.</p>
+        </details>
+      </li>
+      <li class="faq-item">
+        <details>
+          <summary class="md-title-large faq-summary">
+            <span>How does the course work?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="md-body-large faq-body">It&rsquo;s a hybrid setup. You go at your own pace, but you&rsquo;re not on your own. Check-ins, support, and tools to help you apply what you&rsquo;re learning &mdash; videos, worksheets, calculators, and guidance.</p>
+        </details>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,491 @@
+/* a11y utils */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: var(--md-sys-spacing-3);
+  z-index: 1000;
+  padding: var(--md-sys-spacing-3) var(--md-sys-spacing-4);
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  /* fully hidden until focused — avoids exposure during overscroll */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  transition: top var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  width: auto;
+  height: auto;
+  clip: auto;
+  clip-path: none;
+  top: var(--md-sys-spacing-3);
+  white-space: normal;
+}
+
+.skip-link:focus-visible {
+  outline: 2px solid var(--md-sys-color-secondary);
+  outline-offset: 2px;
+}
+
+/* focus ring */
+
+:focus { outline: none; }
+
+:focus-visible {
+  outline: 2px solid var(--rewbi-accent);
+  outline-offset: 2px;
+  border-radius: var(--md-sys-shape-corner-extra-small);
+}
+
+/* button */
+
+.md-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-sys-spacing-2);
+  min-height: 40px;
+  padding: 0 var(--md-sys-spacing-6);
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    box-shadow var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    background-color var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    color var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.md-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+
+.md-button:hover::before  { opacity: var(--md-sys-state-hover-opacity); }
+.md-button:focus-visible::before { opacity: var(--md-sys-state-focus-opacity); }
+.md-button:active::before { opacity: var(--md-sys-state-pressed-opacity); }
+
+.md-button:disabled,
+.md-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.38;
+  box-shadow: none;
+}
+.md-button:disabled::before,
+.md-button[aria-disabled="true"]::before { opacity: 0; }
+
+/* filled */
+.md-button-filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  box-shadow: var(--md-sys-elevation-0);
+}
+.md-button-filled:hover { box-shadow: var(--md-sys-elevation-1); }
+
+/* OLED dark mode: burgundy primary sits at 1.6:1 vs true black, so its
+   boundary disappears. A faint outline-variant ring at rest meets the
+   3:1 non-text contrast rule without compromising the brand fill. */
+:root[data-theme="dark"] .md-button-filled {
+  box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
+}
+:root[data-theme="dark"] .md-button-filled:hover {
+  box-shadow: inset 0 0 0 1px var(--md-sys-color-outline), var(--md-sys-elevation-1);
+}
+
+/* outlined */
+.md-button-outlined {
+  background: transparent;
+  color: var(--rewbi-accent);
+  box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
+}
+.md-button-outlined:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--rewbi-accent);
+}
+
+/* tonal */
+.md-button-tonal {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+.md-button-tonal:hover { box-shadow: var(--md-sys-elevation-1); }
+
+/* text */
+.md-button-text {
+  background: transparent;
+  color: var(--rewbi-accent);
+  padding: 0 var(--md-sys-spacing-3);
+}
+
+/* large */
+.md-button-large {
+  min-height: 56px;
+  padding: 0 var(--md-sys-spacing-8);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+}
+
+/* block */
+.md-button-block {
+  display: flex;
+  width: 100%;
+}
+
+/* on dark — by definition always on a dark surface (e.g. hero scrim),
+   so the label color is fixed light regardless of theme */
+.md-button-on-dark.md-button-outlined {
+  color: var(--rewbi-cream);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.md-button-on-dark.md-button-outlined:hover {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+/* icon button */
+
+.icon-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  /* `visible` (not hidden) so the ::after touch-target extension can sit outside
+     the 40px visual. The ::before state layer stays round via its own radius. */
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+}
+
+/* M3 + WCAG 2.5.5: extend the touch target to 48dp without enlarging the visual
+   chip. The pseudo is transparent — it only catches pointer events. */
+.icon-button::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+}
+
+.icon-button svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  /* sit above the ::after hit-area pseudo */
+  position: relative;
+  z-index: 1;
+}
+
+.icon-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* round the state layer to match the icon-button so it doesn't square the corners
+     (we removed overflow:hidden on the parent to allow the touch-target extension) */
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.icon-button:hover::before  { opacity: var(--md-sys-state-hover-opacity); }
+.icon-button:focus-visible::before { opacity: var(--md-sys-state-focus-opacity); }
+.icon-button:active::before { opacity: var(--md-sys-state-pressed-opacity); }
+
+/* fab */
+
+.fab {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  box-shadow: var(--md-sys-elevation-3);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    box-shadow var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    transform var(--md-sys-motion-duration-medium-2) var(--md-sys-motion-easing-emphasized);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fab::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+
+.fab:hover { box-shadow: var(--md-sys-elevation-4); }
+.fab:hover::before  { opacity: var(--md-sys-state-hover-opacity); }
+.fab:focus-visible::before { opacity: var(--md-sys-state-focus-opacity); }
+.fab:active::before { opacity: var(--md-sys-state-pressed-opacity); }
+
+.fab svg {
+  width: 24px;
+  height: 24px;
+}
+
+.fab-small {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--md-sys-shape-corner-medium);
+}
+
+.fab-small svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* card */
+
+.md-card {
+  position: relative;
+  display: block;
+  border-radius: var(--md-sys-shape-corner-medium);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    box-shadow var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    transform var(--md-sys-motion-duration-medium-1) var(--md-sys-motion-easing-emphasized);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.md-card-filled {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+}
+
+.md-card-elevated {
+  background: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-on-surface);
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.md-card-outlined {
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  box-shadow: inset 0 0 0 1px var(--md-sys-color-outline-variant);
+}
+
+a.md-card::before,
+button.md-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+  z-index: 1;
+}
+
+a.md-card:hover::before,
+button.md-card:hover::before  { opacity: var(--md-sys-state-hover-opacity); }
+a.md-card:focus-visible::before,
+button.md-card:focus-visible::before { opacity: var(--md-sys-state-focus-opacity); }
+a.md-card:active::before,
+button.md-card:active::before { opacity: var(--md-sys-state-pressed-opacity); }
+
+a.md-card-elevated:hover,
+button.md-card-elevated:hover {
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+/* textfield */
+
+.md-textfield {
+  position: relative;
+  display: block;
+}
+
+.md-textfield-outlined {
+  --tf-bg: var(--md-sys-color-surface);
+}
+
+.md-textfield input,
+.md-textfield textarea {
+  width: 100%;
+  min-height: 56px;
+  padding: 18px var(--md-sys-spacing-4) 6px;
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background: var(--tf-bg);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+  outline: none;
+  transition:
+    border-color var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    box-shadow var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+}
+
+.md-textfield textarea {
+  min-height: 96px;
+  padding-top: 22px;
+  resize: vertical;
+}
+
+.md-textfield input:hover,
+.md-textfield textarea:hover {
+  border-color: var(--md-sys-color-on-surface);
+}
+
+.md-textfield input:focus,
+.md-textfield textarea:focus {
+  border-color: var(--rewbi-accent);
+  box-shadow: inset 0 0 0 1px var(--rewbi-accent);
+}
+
+.md-textfield input[aria-invalid="true"],
+.md-textfield textarea[aria-invalid="true"] {
+  border-color: var(--md-sys-color-error);
+  box-shadow: inset 0 0 0 1px var(--md-sys-color-error);
+}
+
+.md-textfield-label {
+  position: absolute;
+  top: 0;
+  left: var(--md-sys-spacing-3);
+  transform: translateY(-50%);
+  padding: 0 var(--md-sys-spacing-1);
+  background: var(--tf-bg);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-body-small-size);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  pointer-events: none;
+  transition:
+    top var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    font-size var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard),
+    color var(--md-sys-motion-duration-short-3) var(--md-sys-motion-easing-standard);
+}
+
+.md-textfield input:placeholder-shown ~ .md-textfield-label,
+.md-textfield textarea:placeholder-shown ~ .md-textfield-label {
+  top: 50%;
+  font-size: var(--md-sys-typescale-body-large-size);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md-textfield-multiline textarea:placeholder-shown ~ .md-textfield-label {
+  top: 24px;
+  transform: none;
+}
+
+.md-textfield input:focus ~ .md-textfield-label,
+.md-textfield textarea:focus ~ .md-textfield-label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: var(--md-sys-typescale-body-small-size);
+  color: var(--rewbi-accent);
+}
+
+.md-textfield input[aria-invalid="true"] ~ .md-textfield-label,
+.md-textfield textarea[aria-invalid="true"] ~ .md-textfield-label {
+  color: var(--md-sys-color-error);
+}
+
+.md-textfield-supporting {
+  margin: var(--md-sys-spacing-1) var(--md-sys-spacing-4) 0;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md-textfield .req {
+  color: var(--md-sys-color-error);
+  margin-left: 2px;
+}
+
+.md-textfield .hint {
+  color: var(--md-sys-color-on-surface-variant);
+  font-weight: 400;
+  margin-left: var(--md-sys-spacing-1);
+}
+
+/* chip */
+
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-2);
+  min-height: 32px;
+  padding: 0 var(--md-sys-spacing-3);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  white-space: nowrap;
+}
+
+.md-chip-assist {
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  box-shadow: inset 0 0 0 1px var(--md-sys-color-outline-variant);
+}
+
+.md-chip-prominent {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  box-shadow: none;
+}
+
+.md-chip-filter {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface-variant);
+}

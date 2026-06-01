@@ -1,0 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:security@rewbihub.com
+Expires: 2027-05-01T00:00:00Z
+Encryption: https://rewbihub.com/.well-known/pgp-key.txt
+Preferred-Languages: en
+Canonical: https://rewbihub.com/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQc2ZccA0zEWFo2+gqL2nfST/L9MAUCagWAdwAKCRCL2nfST/L9
+MGEHAP0bIAfj95cImg5LGmS/47FRKKAB6xGDHNZTS8Ah16A/nQEA2sql49ZPO+K1
+/oiBR8wVaJ23lOVgbV3rRwSUgwEWAw0=
+=t5ux
+-----END PGP SIGNATURE-----

@@ -1,0 +1,21 @@
+baseURL = "https://rewbihub.com/"
+publishDir = "../public"
+locale = "en-US"
+title = "Real Estate & Wealth Building Institute"
+defaultContentLanguage = "en"
+canonifyURLs = false
+relativeURLs = false
+enableRobotsTXT = true
+enableEmoji = false
+disableKinds = ["taxonomy", "term", "rss"]
+
+[sitemap]
+changefreq = "monthly"
+filename = "sitemap.xml"
+priority = 0.5
+
+[minify]
+disableHTML = false
+disableCSS = false
+disableJS = false
+minifyOutput = true

@@ -1,0 +1,215 @@
+/* typography — Hugo-templated; @font-face uses fingerprinted RelPermalink (run via ExecuteAsTemplate in baseof.html). */
+
+/* faces — all self-hosted from assets/fonts/{cormorant,inter} */
+
+/* Cormorant Garamond — brand / display */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/cormorant/CormorantGaramond-Medium.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/cormorant/CormorantGaramond-MediumItalic.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/cormorant/CormorantGaramond-SemiBold.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/cormorant/CormorantGaramond-Bold.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+
+/* Inter — plain / UI / body */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/inter/Inter-Regular.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/inter/Inter-Italic.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/inter/Inter-Medium.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/inter/Inter-SemiBold.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("{{ (resources.Get "fonts/inter/Inter-Bold.woff2" | fingerprint).RelPermalink }}") format("woff2");
+}
+
+/* base */
+
+body {
+  font-family: var(--md-ref-typeface-plain);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+  color: var(--md-sys-color-on-surface);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--md-ref-typeface-brand);
+  color: var(--md-sys-color-on-surface);
+  font-weight: 500;
+  text-wrap: balance;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
+}
+
+p { text-wrap: pretty; }
+
+/* scale */
+
+.md-display-large {
+  font-family: var(--md-sys-typescale-display-large-font);
+  font-size: var(--md-sys-typescale-display-large-size);
+  line-height: var(--md-sys-typescale-display-large-line);
+  letter-spacing: var(--md-sys-typescale-display-large-tracking);
+  font-weight: var(--md-sys-typescale-display-large-weight);
+}
+.md-display-medium {
+  font-family: var(--md-sys-typescale-display-medium-font);
+  font-size: var(--md-sys-typescale-display-medium-size);
+  line-height: var(--md-sys-typescale-display-medium-line);
+  letter-spacing: var(--md-sys-typescale-display-medium-tracking);
+  font-weight: var(--md-sys-typescale-display-medium-weight);
+}
+.md-display-small {
+  font-family: var(--md-sys-typescale-display-small-font);
+  font-size: var(--md-sys-typescale-display-small-size);
+  line-height: var(--md-sys-typescale-display-small-line);
+  letter-spacing: var(--md-sys-typescale-display-small-tracking);
+  font-weight: var(--md-sys-typescale-display-small-weight);
+}
+
+.md-headline-large {
+  font-family: var(--md-sys-typescale-headline-large-font);
+  font-size: var(--md-sys-typescale-headline-large-size);
+  line-height: var(--md-sys-typescale-headline-large-line);
+  letter-spacing: var(--md-sys-typescale-headline-large-tracking);
+  font-weight: var(--md-sys-typescale-headline-large-weight);
+}
+.md-headline-medium {
+  font-family: var(--md-sys-typescale-headline-medium-font);
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  line-height: var(--md-sys-typescale-headline-medium-line);
+  letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
+  font-weight: var(--md-sys-typescale-headline-medium-weight);
+}
+.md-headline-small {
+  font-family: var(--md-sys-typescale-headline-small-font);
+  font-size: var(--md-sys-typescale-headline-small-size);
+  line-height: var(--md-sys-typescale-headline-small-line);
+  letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+  font-weight: var(--md-sys-typescale-headline-small-weight);
+}
+
+.md-title-large {
+  font-family: var(--md-sys-typescale-title-large-font);
+  font-size: var(--md-sys-typescale-title-large-size);
+  line-height: var(--md-sys-typescale-title-large-line);
+  letter-spacing: var(--md-sys-typescale-title-large-tracking);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+}
+.md-title-medium {
+  font-family: var(--md-sys-typescale-title-medium-font);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  line-height: var(--md-sys-typescale-title-medium-line);
+  letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+  font-weight: var(--md-sys-typescale-title-medium-weight);
+}
+.md-title-small {
+  font-family: var(--md-sys-typescale-title-small-font);
+  font-size: var(--md-sys-typescale-title-small-size);
+  line-height: var(--md-sys-typescale-title-small-line);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+}
+
+.md-body-large {
+  font-family: var(--md-sys-typescale-body-large-font);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line);
+  letter-spacing: var(--md-sys-typescale-body-large-tracking);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+}
+.md-body-medium {
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+}
+.md-body-small {
+  font-family: var(--md-sys-typescale-body-small-font);
+  font-size: var(--md-sys-typescale-body-small-size);
+  line-height: var(--md-sys-typescale-body-small-line);
+  letter-spacing: var(--md-sys-typescale-body-small-tracking);
+  font-weight: var(--md-sys-typescale-body-small-weight);
+}
+
+.md-label-large {
+  font-family: var(--md-sys-typescale-label-large-font);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+}
+.md-label-medium {
+  font-family: var(--md-sys-typescale-label-medium-font);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  line-height: var(--md-sys-typescale-label-medium-line);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+}
+.md-label-small {
+  font-family: var(--md-sys-typescale-label-small-font);
+  font-size: var(--md-sys-typescale-label-small-size);
+  line-height: var(--md-sys-typescale-label-small-line);
+  letter-spacing: var(--md-sys-typescale-label-small-tracking);
+  font-weight: var(--md-sys-typescale-label-small-weight);
+}
+
+/* eyebrow */
+
+.eyebrow {
+  font-family: var(--rewbi-eyebrow-font);
+  font-size: 0.8125rem;
+  letter-spacing: var(--rewbi-eyebrow-tracking);
+  font-weight: var(--rewbi-eyebrow-weight);
+  text-transform: uppercase;
+  color: var(--md-sys-color-on-surface-variant);
+}

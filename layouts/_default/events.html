@@ -1,0 +1,171 @@
+{{ define "main" }}
+
+{{/* hero */}}
+<section class="page-hero">
+  <div class="section-inner page-hero-inner">
+    <p class="eyebrow">Events</p>
+    <h1 class="md-display-medium page-hero-title">Workshops, webinars, and live sessions.</h1>
+  </div>
+</section>
+
+{{/* data */}}
+{{ $now := now }}
+{{ $today := $now.Format "2006-01-02" }}
+{{ $raw := hugo.Data.events }}
+{{ $list := slice }}
+{{ if reflect.IsSlice $raw }}
+  {{ $list = $raw }}
+{{ else if reflect.IsMap $raw }}
+  {{ range $k, $v := $raw }}{{ $list = $list | append $v }}{{ end }}
+{{ end }}
+{{ $upcoming := where $list "date" ">=" $today }}
+{{ $upcoming = sort $upcoming "date" "asc" }}
+{{ $past := where $list "date" "<" $today }}
+{{ $past = sort $past "date" "desc" }}
+{{ $past = first 12 $past }}
+
+{{/* upcoming */}}
+<section class="section events-section upcoming-events-section">
+  <div class="section-inner">
+
+    {{ if and $upcoming (gt (len $upcoming) 0) }}
+      <header class="section-head">
+        <h2 class="md-headline-large section-title">Upcoming events</h2>
+      </header>
+
+      <ul class="upcoming-event-list">
+        {{ range $i, $e := $upcoming }}
+          {{ $d := time .date }}
+          {{ $weekday := dateFormat "Monday" $d }}
+          {{ $monthFull := dateFormat "January" $d }}
+          {{ $hours := div (sub $d.Unix $now.Unix) 3600 }}
+          {{ $days := div $hours 24 }}
+          {{ $proximity := "" }}
+          {{ if le $days 0 }}{{ $proximity = "Today" }}
+          {{ else if eq $days 1 }}{{ $proximity = "Tomorrow" }}
+          {{ else if le $days 6 }}{{ $proximity = printf "This %s" $weekday }}
+          {{ else if le $days 13 }}{{ $proximity = "Next week" }}
+          {{ else if le $days 30 }}{{ $proximity = $monthFull }}
+          {{ end }}
+
+          <li>
+            <article class="upcoming-event-card md-card md-card-elevated">
+              <div class="upcoming-event-flyer">
+                {{ if .flyer }}
+                  <img src="{{ .flyer }}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                {{ else }}
+                  <img src="{{ $.Site.Params.eventPopupImage }}" alt="" loading="lazy" decoding="async">
+                {{ end }}
+              </div>
+              <div class="upcoming-event-body">
+                <p class="md-label-large upcoming-event-date">{{ dateFormat "January 2, 2006" $d }}</p>
+
+                <ul class="upcoming-event-meta">
+                  {{ with $proximity }}<li class="md-chip md-chip-assist md-chip-prominent">{{ . }}</li>{{ end }}
+                  {{ with .event_type }}<li class="md-chip md-chip-assist">{{ . }}</li>{{ end }}
+                  {{ if eq .format "in_person" }}<li class="md-chip md-chip-assist">In Person</li>
+                  {{ else if eq .format "virtual" }}<li class="md-chip md-chip-assist">Virtual</li>
+                  {{ else if eq .format "hybrid" }}<li class="md-chip md-chip-assist">Hybrid</li>{{ end }}
+                </ul>
+
+                <h3 class="md-headline-small upcoming-event-title">{{ .title }}</h3>
+
+                <ul class="upcoming-event-info">
+                  {{ with .start_time }}
+                    <li class="md-body-medium">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                      <span>{{ . }}{{ with $e.end_time }} &ndash; {{ . }}{{ end }}{{ with $e.timezone }} &middot; {{ . }}{{ end }}</span>
+                    </li>
+                  {{ end }}
+                  {{ if or .location (eq .format "virtual") }}
+                    <li class="md-body-medium">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                      <span>
+                        {{ if eq .format "virtual" }}{{ if .location }}{{ .location }}{{ else }}Online{{ end }}
+                        {{ else if eq .format "hybrid" }}{{ with .location }}{{ . }} &middot; {{ end }}Hybrid
+                        {{ else }}{{ with .location }}{{ . }}{{ end }}{{ end }}
+                      </span>
+                    </li>
+                  {{ end }}
+                  {{ with .capacity }}
+                    <li class="md-body-medium">
+                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+                      <span>Limited to {{ . }} seats</span>
+                    </li>
+                  {{ end }}
+                </ul>
+
+                {{ with .description }}<p class="md-body-large upcoming-event-desc">{{ . }}</p>{{ end }}
+
+                <div class="upcoming-event-foot">
+                  {{ with .registration_url }}
+                    <a href="{{ . }}" class="md-button md-button-filled" target="_blank" rel="noopener noreferrer">Reserve your seat<span class="visually-hidden"> (opens in new window)</span></a>
+                  {{ else }}
+                    <a href="/contact" class="md-button md-button-outlined">Get notified</a>
+                  {{ end }}
+                </div>
+              </div>
+            </article>
+          </li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <div class="events-empty md-card md-card-filled">
+        <p class="md-headline-small events-empty-title">No upcoming events scheduled.</p>
+        <p class="md-body-large events-empty-lede">
+          <a href="/contact" class="events-empty-link">Get notified when the next one is announced.</a>
+        </p>
+      </div>
+    {{ end }}
+
+  </div>
+</section>
+
+{{/* past */}}
+{{ if $past }}
+<section class="section events-section past-events-section section-alt">
+  <div class="section-inner">
+    <header class="section-head">
+      <h2 class="md-headline-large section-title">Past events</h2>
+    </header>
+    <ul class="past-event-grid">
+      {{ range $past }}
+        {{ $d := time .date }}
+        {{ $title := .title }}
+        {{ $recap := .recap_url }}
+        <li>
+          <article class="past-event-card md-card md-card-elevated">
+            <div class="past-event-flyer">
+              {{ if .flyer }}
+                <img src="{{ .flyer }}" alt="" loading="lazy" decoding="async">
+              {{ else }}
+                <img src="{{ $.Site.Params.eventPopupImage }}" alt="" loading="lazy" decoding="async">
+              {{ end }}
+            </div>
+            <div class="past-event-body">
+              <p class="md-label-large past-event-date">{{ dateFormat "January 2, 2006" $d }}</p>
+              {{ with .tags }}
+                <ul class="past-event-meta">
+                  {{ range $i, $tag := . }}
+                    {{ if gt $i 0 }}<li class="past-event-dot" aria-hidden="true">&middot;</li>{{ end }}
+                    <li class="md-label-medium past-event-tag">{{ $tag }}</li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+              <h3 class="md-title-large past-event-title">
+                {{ if $recap }}<a href="{{ $recap }}" target="_blank" rel="noopener noreferrer">{{ $title }}<span class="visually-hidden"> (opens in new window)</span></a>
+                {{ else }}{{ $title }}{{ end }}
+              </h3>
+              {{ if $recap }}
+                <a href="{{ $recap }}" target="_blank" rel="noopener noreferrer" class="md-label-large past-event-link">Watch recap <span aria-hidden="true">&rarr;</span><span class="visually-hidden"> (opens in new window)</span></a>
+              {{ end }}
+            </div>
+          </article>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+
+{{ end }}

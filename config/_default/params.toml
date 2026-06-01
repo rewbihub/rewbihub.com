@@ -1,0 +1,18 @@
+description = "Build wealth through real estate. A clear, step-by-step course taught by Farrah Ali — WSJ best-selling author and investor with 100+ properties transacted."
+author = "Real Estate & Wealth Building Institute"
+contactEmail = "info@rewbihub.com"
+bookCallUrl = "/contact"
+loginUrl = "https://portal.rewbihub.com/"
+applyUrl = "/contact"
+
+# Event popup. Flip showEventPopup = false to hide.
+showEventPopup = false
+eventPopupImage = "/images/foreclosures-2026-05-12.png"
+eventPopupLink  = "https://forms.gle/3MEu7AGMRzwCRLtc6"
+
+[social]
+facebook = "https://www.facebook.com/rewbihub"
+instagram = "https://www.instagram.com/rewbihub"
+linkedin = "https://www.linkedin.com/company/rewbihub"
+youtube = "https://www.youtube.com/@rewbihub"
+github = "https://www.github.com/rewbihub"

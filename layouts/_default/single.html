@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<section class="page-hero">
+  <div class="section-inner page-hero-inner">
+    {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+    <h1 class="md-display-medium page-hero-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="md-body-large page-hero-lede">{{ . }}</p>{{ end }}
+  </div>
+</section>
+
+<section class="section prose-section">
+  <article class="section-inner content-narrow">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </article>
+</section>
+
+{{ end }}

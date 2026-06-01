@@ -1,0 +1,72 @@
+{{ define "main" }}
+
+{{/* hero */}}
+<section class="bio-hero">
+  <div class="section-inner bio-hero-inner">
+    <div class="bio-hero-photo">
+      <img src="/images/farrah/headshot.jpg" alt="Farrah Ali" width="480" height="600" decoding="async" fetchpriority="high">
+    </div>
+    <div class="bio-hero-body">
+      <p class="eyebrow">Founder &amp; Instructor</p>
+      <h1 class="md-display-medium bio-hero-title">Farrah Ali</h1>
+      <p class="md-body-large bio-hero-tagline">WSJ best-selling author. Real estate investor. Mother. Coach.</p>
+      <ul class="bio-stats">
+        <li class="bio-stat md-card md-card-filled">
+          <span class="md-display-small bio-stat-value">100+</span>
+          <span class="md-body-medium bio-stat-label">properties transacted</span>
+        </li>
+        <li class="bio-stat md-card md-card-filled">
+          <span class="md-display-small bio-stat-value">WSJ</span>
+          <span class="md-body-medium bio-stat-label">best-selling author</span>
+        </li>
+        <li class="bio-stat md-card md-card-filled">
+          <span class="md-display-small bio-stat-value">IBCP</span>
+          <span class="md-body-medium bio-stat-label">certified life coach</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{{/* prose */}}
+<section class="section prose-section">
+  <div class="section-inner content-narrow">
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+{{/* gallery */}}
+<section class="section bio-gallery section-alt">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow">Behind the work</p>
+      <h2 class="md-headline-large section-title">A life behind the curriculum.</h2>
+    </header>
+    <ul class="bio-gallery-grid">
+      <li class="bio-gallery-item md-card md-card-elevated">
+        <img src="/images/farrah/portrait-1.jpeg" alt="Farrah Ali at a property" width="600" height="600" loading="lazy" decoding="async">
+      </li>
+      <li class="bio-gallery-item md-card md-card-elevated">
+        <img src="/images/farrah/portrait-2.jpeg" alt="Farrah Ali" width="600" height="600" loading="lazy" decoding="async">
+      </li>
+    </ul>
+  </div>
+</section>
+
+{{/* cta */}}
+<section class="section cta-band" aria-labelledby="farrah-cta-heading">
+  <div class="section-inner">
+    <div class="cta-card">
+      <h2 class="md-display-small cta-title" id="farrah-cta-heading">Want to learn directly from her?</h2>
+      <p class="md-body-large cta-sub">The course and coaching program is open to a limited cohort each season.</p>
+      <div class="cta-actions">
+        <a href="/course" class="md-button md-button-filled md-button-large">Explore the course</a>
+        <a href="/contact" class="md-button md-button-outlined md-button-large">Apply Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

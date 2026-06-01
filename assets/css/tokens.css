@@ -1,0 +1,321 @@
+/* tokens */
+
+:root {
+  /* brand */
+  --rewbi-burgundy:        #610d2e;
+  --rewbi-burgundy-dark:   #3e0a1d;
+  --rewbi-burgundy-mid:    #8a1a45;
+  --rewbi-burgundy-light:  #f2e4ea;
+  --rewbi-gold:            #b78946;
+  --rewbi-gold-dark:       #6e4e22;
+  --rewbi-gold-mid:        #d4a85c;
+  --rewbi-gold-light:      #f7eed8;
+  --rewbi-charcoal:        #1a1a1a;
+  --rewbi-slate:           #3d3d3d;
+  --rewbi-gray:            #6b6b6b;
+  --rewbi-fog:             #e8e8e8;
+  --rewbi-cloud:           #f4f4f4;
+  --rewbi-cream:           #fdfbf7;
+  --rewbi-white:           #ffffff;
+
+  /* color roles */
+  --md-sys-color-primary:                 var(--rewbi-burgundy);
+  --md-sys-color-on-primary:              var(--rewbi-white);
+  --md-sys-color-primary-container:       var(--rewbi-burgundy-light);
+  --md-sys-color-on-primary-container:    var(--rewbi-burgundy-dark);
+
+  --md-sys-color-secondary:               var(--rewbi-gold);
+  --md-sys-color-on-secondary:            var(--rewbi-charcoal);
+  --md-sys-color-secondary-container:     var(--rewbi-gold-light);
+  --md-sys-color-on-secondary-container:  var(--rewbi-gold-dark);
+
+  /* tertiary — complementary accent role; uses gold-dark family for contrast against
+     burgundy primary while staying inside the brand palette */
+  --md-sys-color-tertiary:                var(--rewbi-gold-dark);
+  --md-sys-color-on-tertiary:             var(--rewbi-white);
+  --md-sys-color-tertiary-container:      #f3e3c2;
+  --md-sys-color-on-tertiary-container:   #3a2810;
+
+  --md-sys-color-surface:                 var(--rewbi-cream);
+  --md-sys-color-surface-dim:             #ebe2d0;
+  --md-sys-color-surface-bright:          #fffaf2;
+  --md-sys-color-surface-container-lowest: var(--rewbi-white);
+  --md-sys-color-surface-container-low:   #faf6f0;
+  --md-sys-color-surface-container:       #f4ede4;
+  --md-sys-color-surface-container-high:  #ece4d8;
+  --md-sys-color-surface-container-highest:#e3d9ca;
+  --md-sys-color-on-surface:              var(--rewbi-charcoal);
+  --md-sys-color-on-surface-variant:      var(--rewbi-slate);
+
+  --md-sys-color-outline:                 var(--rewbi-gray);
+  --md-sys-color-outline-variant:         var(--rewbi-fog);
+
+  --md-sys-color-inverse-surface:         var(--rewbi-charcoal);
+  --md-sys-color-inverse-on-surface:      var(--rewbi-cream);
+  --md-sys-color-inverse-primary:         var(--rewbi-gold-mid);
+
+  --md-sys-color-error:                   #c0392b;
+  --md-sys-color-on-error:                var(--rewbi-white);
+  --md-sys-color-error-container:         #fce4e1;
+  --md-sys-color-on-error-container:      #5b1208;
+
+  /* scrim is an MD3 role; success is a REWBI custom (not in MD3 spec) */
+  --md-sys-color-scrim:                   rgba(26, 26, 26, 0.4);
+  --rewbi-color-success:                  #27856a;
+
+  /* font families */
+  --md-ref-typeface-brand: "Cormorant Garamond", "Playfair Display", "Times New Roman", Georgia, serif;
+  --md-ref-typeface-plain: "Inter", "Roboto", Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+
+  /* type scale */
+  --md-sys-typescale-display-large-font:    var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-large-size:    clamp(3rem, 5vw + 1rem, 4.5rem);
+  --md-sys-typescale-display-large-line:    1.04;
+  --md-sys-typescale-display-large-tracking:-0.02em;
+  --md-sys-typescale-display-large-weight:  500;
+
+  --md-sys-typescale-display-medium-font:   var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-medium-size:   clamp(2.5rem, 4vw + 0.75rem, 3.5rem);
+  --md-sys-typescale-display-medium-line:   1.08;
+  --md-sys-typescale-display-medium-tracking:-0.015em;
+  --md-sys-typescale-display-medium-weight: 500;
+
+  --md-sys-typescale-display-small-font:    var(--md-ref-typeface-brand);
+  --md-sys-typescale-display-small-size:    clamp(2rem, 3vw + 0.5rem, 2.75rem);
+  --md-sys-typescale-display-small-line:    1.12;
+  --md-sys-typescale-display-small-tracking:-0.01em;
+  --md-sys-typescale-display-small-weight:  500;
+
+  --md-sys-typescale-headline-large-font:   var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-large-size:   clamp(1.75rem, 2vw + 1rem, 2.25rem);
+  --md-sys-typescale-headline-large-line:   1.16;
+  --md-sys-typescale-headline-large-tracking:-0.005em;
+  --md-sys-typescale-headline-large-weight: 500;
+
+  --md-sys-typescale-headline-medium-font:  var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-medium-size:  1.75rem;
+  --md-sys-typescale-headline-medium-line:  1.2;
+  --md-sys-typescale-headline-medium-tracking: 0;
+  --md-sys-typescale-headline-medium-weight:500;
+
+  --md-sys-typescale-headline-small-font:   var(--md-ref-typeface-brand);
+  --md-sys-typescale-headline-small-size:   1.5rem;
+  --md-sys-typescale-headline-small-line:   1.24;
+  --md-sys-typescale-headline-small-tracking: 0;
+  --md-sys-typescale-headline-small-weight: 500;
+
+  --md-sys-typescale-title-large-font:      var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-large-size:      1.375rem;
+  --md-sys-typescale-title-large-line:      1.28;
+  --md-sys-typescale-title-large-tracking:  0;
+  --md-sys-typescale-title-large-weight:    600;
+
+  --md-sys-typescale-title-medium-font:     var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-medium-size:     1rem;
+  --md-sys-typescale-title-medium-line:     1.5;
+  --md-sys-typescale-title-medium-tracking: 0.009em;
+  --md-sys-typescale-title-medium-weight:   600;
+
+  --md-sys-typescale-title-small-font:      var(--md-ref-typeface-plain);
+  --md-sys-typescale-title-small-size:      0.875rem;
+  --md-sys-typescale-title-small-line:      1.42;
+  --md-sys-typescale-title-small-tracking:  0.007em;
+  --md-sys-typescale-title-small-weight:    600;
+
+  --md-sys-typescale-body-large-font:       var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-large-size:       1.0625rem;
+  --md-sys-typescale-body-large-line:       1.6;
+  --md-sys-typescale-body-large-tracking:   0.009em;
+  --md-sys-typescale-body-large-weight:     400;
+
+  --md-sys-typescale-body-medium-font:      var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-medium-size:      0.9375rem;
+  --md-sys-typescale-body-medium-line:      1.6;
+  --md-sys-typescale-body-medium-tracking:  0.016em;
+  --md-sys-typescale-body-medium-weight:    400;
+
+  --md-sys-typescale-body-small-font:       var(--md-ref-typeface-plain);
+  --md-sys-typescale-body-small-size:       0.8125rem;
+  --md-sys-typescale-body-small-line:       1.5;
+  --md-sys-typescale-body-small-tracking:   0.025em;
+  --md-sys-typescale-body-small-weight:     400;
+
+  --md-sys-typescale-label-large-font:      var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-large-size:      0.875rem;
+  --md-sys-typescale-label-large-line:      1.28;
+  --md-sys-typescale-label-large-tracking:  0.007em;
+  --md-sys-typescale-label-large-weight:    600;
+
+  --md-sys-typescale-label-medium-font:     var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-medium-size:     0.75rem;
+  --md-sys-typescale-label-medium-line:     1.33;
+  --md-sys-typescale-label-medium-tracking: 0.042em;
+  --md-sys-typescale-label-medium-weight:   600;
+
+  --md-sys-typescale-label-small-font:      var(--md-ref-typeface-plain);
+  --md-sys-typescale-label-small-size:      0.6875rem;
+  --md-sys-typescale-label-small-line:      1.45;
+  --md-sys-typescale-label-small-tracking:  0.045em;
+  --md-sys-typescale-label-small-weight:    600;
+
+  /* eyebrow */
+  --rewbi-eyebrow-font:     var(--md-ref-typeface-plain);
+  --rewbi-eyebrow-size:     0.75rem;
+  --rewbi-eyebrow-tracking: 0.18em;
+  --rewbi-eyebrow-weight:   600;
+
+  /* shape scale */
+  --md-sys-shape-corner-none:                 0;
+  --md-sys-shape-corner-extra-small:          4px;
+  --md-sys-shape-corner-small:                8px;
+  --md-sys-shape-corner-medium:               12px;
+  --md-sys-shape-corner-large:                16px;
+  --md-sys-shape-corner-large-increased:      20px;
+  --md-sys-shape-corner-large-end:            16px 16px 0 0;
+  --md-sys-shape-corner-extra-large:          28px;
+  --md-sys-shape-corner-extra-large-increased:32px;
+  --md-sys-shape-corner-extra-extra-large:    48px;
+  --md-sys-shape-corner-full:                 9999px;
+
+  /* elevation */
+  --md-sys-elevation-0: none;
+  --md-sys-elevation-1: 0 1px 2px rgba(97, 13, 46, 0.06), 0 1px 3px rgba(97, 13, 46, 0.04);
+  --md-sys-elevation-2: 0 1px 2px rgba(97, 13, 46, 0.06), 0 2px 6px rgba(97, 13, 46, 0.08);
+  --md-sys-elevation-3: 0 1px 3px rgba(97, 13, 46, 0.06), 0 4px 12px rgba(97, 13, 46, 0.10);
+  --md-sys-elevation-4: 0 2px 4px rgba(97, 13, 46, 0.06), 0 8px 20px rgba(97, 13, 46, 0.12);
+  --md-sys-elevation-5: 0 4px 8px rgba(97, 13, 46, 0.08), 0 16px 32px rgba(97, 13, 46, 0.14);
+
+  /* state opacity */
+  --md-sys-state-hover-opacity:    0.08;
+  --md-sys-state-focus-opacity:    0.10;
+  --md-sys-state-pressed-opacity:  0.12;
+  --md-sys-state-dragged-opacity:  0.16;
+
+  /* motion easing */
+  --md-sys-motion-easing-standard:               cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-standard-accelerate:    cubic-bezier(0.3, 0, 1, 1);
+  --md-sys-motion-easing-standard-decelerate:    cubic-bezier(0, 0, 0, 1);
+  --md-sys-motion-easing-emphasized:             cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-accelerate:  cubic-bezier(0.3, 0, 0.8, 0.15);
+  --md-sys-motion-easing-emphasized-decelerate:  cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-linear:                 linear;
+
+  /* motion duration */
+  --md-sys-motion-duration-short-1:    50ms;
+  --md-sys-motion-duration-short-2:    100ms;
+  --md-sys-motion-duration-short-3:    150ms;
+  --md-sys-motion-duration-short-4:    200ms;
+  --md-sys-motion-duration-medium-1:   250ms;
+  --md-sys-motion-duration-medium-2:   300ms;
+  --md-sys-motion-duration-medium-3:   350ms;
+  --md-sys-motion-duration-medium-4:   400ms;
+  --md-sys-motion-duration-long-1:     450ms;
+  --md-sys-motion-duration-long-2:     500ms;
+  --md-sys-motion-duration-long-3:     550ms;
+  --md-sys-motion-duration-long-4:     600ms;
+  --md-sys-motion-duration-extra-long-1: 700ms;
+  --md-sys-motion-duration-extra-long-2: 800ms;
+
+  /* spacing */
+  --md-sys-spacing-0:  0;
+  --md-sys-spacing-1:  4px;
+  --md-sys-spacing-2:  8px;
+  --md-sys-spacing-3:  12px;
+  --md-sys-spacing-4:  16px;
+  --md-sys-spacing-5:  20px;
+  --md-sys-spacing-6:  24px;
+  --md-sys-spacing-8:  32px;
+  --md-sys-spacing-10: 40px;
+  --md-sys-spacing-12: 48px;
+  --md-sys-spacing-16: 64px;
+  --md-sys-spacing-20: 80px;
+  --md-sys-spacing-24: 96px;
+
+  /* brand accent — used for non-CTA accents (links, badges, focus, eyebrows).
+     burgundy in light, lifts to gold in dark for readability. */
+  --rewbi-accent:    var(--rewbi-burgundy);
+  --rewbi-on-accent: var(--rewbi-white);
+
+  /* always-light text colors for the hero / any element sitting on a dark image
+     scrim. Stay constant across light + dark themes because the scrim itself
+     is always dark; this preserves WCAG contrast regardless of mode. */
+  --rewbi-on-hero:        #ffffff;
+  --rewbi-on-hero-accent: #ffd8a0;
+  --rewbi-on-hero-link:   #d4a85c;
+
+  /* layout */
+  --rewbi-nav-h:         64px;
+  --rewbi-content-max:   1200px;
+  --rewbi-content-narrow:720px;
+}
+
+/* dark theme — opt-in only via data-theme="dark" on <html> (set by theme-toggle.js).
+   OLED-friendly: surface = true black; container hierarchy uses very dark warm
+   neutrals so depth still reads on OLED displays without burning pixels.
+   The @media (prefers-color-scheme: dark) block has been removed so the site
+   defaults to light regardless of OS preference. */
+:root[data-theme="dark"] {
+  --md-sys-color-primary:                 #610d2e;
+  --md-sys-color-on-primary:              #ffffff;
+  --md-sys-color-primary-container:       #7d2649;
+  --md-sys-color-on-primary-container:    #ffd9e2;
+
+  --md-sys-color-secondary:               #e3c187;
+  --md-sys-color-on-secondary:            #402d04;
+  --md-sys-color-secondary-container:     #5b431b;
+  --md-sys-color-on-secondary-container:  #ffdea7;
+
+  --md-sys-color-tertiary:                #f1c08c;
+  --md-sys-color-on-tertiary:             #492a0a;
+  --md-sys-color-tertiary-container:      #683f1f;
+  --md-sys-color-on-tertiary-container:   #ffdcbe;
+
+  /* OLED surface family — true black base, lifted containers for depth */
+  --md-sys-color-surface:                  #000000;
+  --md-sys-color-surface-dim:              #000000;
+  --md-sys-color-surface-bright:           #28221a;
+  --md-sys-color-surface-container-lowest: #000000;
+  --md-sys-color-surface-container-low:    #0a0806;
+  --md-sys-color-surface-container:        #13100c;
+  --md-sys-color-surface-container-high:   #1d1812;
+  --md-sys-color-surface-container-highest:#272019;
+  --md-sys-color-on-surface:               #ece2d4;
+  --md-sys-color-on-surface-variant:       #cdc2b4;
+
+  --md-sys-color-outline:                 #968a7d;
+  --md-sys-color-outline-variant:         #4c453d;
+
+  --md-sys-color-inverse-surface:         #ece2d4;
+  --md-sys-color-inverse-on-surface:      #1a1410;
+  --md-sys-color-inverse-primary:         #9d2854;
+
+  --md-sys-color-error:                   #ffb4ab;
+  --md-sys-color-on-error:                #690005;
+  --md-sys-color-error-container:         #93000a;
+  --md-sys-color-on-error-container:      #ffdad6;
+
+  --md-sys-color-scrim:                   rgba(0, 0, 0, 0.7);
+
+  --rewbi-accent:                         #f1c08c;
+  --rewbi-on-accent:                      #492a0a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --md-sys-motion-duration-short-1:  0ms;
+    --md-sys-motion-duration-short-2:  0ms;
+    --md-sys-motion-duration-short-3:  0ms;
+    --md-sys-motion-duration-short-4:  0ms;
+    --md-sys-motion-duration-medium-1: 0ms;
+    --md-sys-motion-duration-medium-2: 0ms;
+    --md-sys-motion-duration-medium-3: 0ms;
+    --md-sys-motion-duration-medium-4: 0ms;
+    --md-sys-motion-duration-long-1:   0ms;
+    --md-sys-motion-duration-long-2:   0ms;
+    --md-sys-motion-duration-long-3:   0ms;
+    --md-sys-motion-duration-long-4:   0ms;
+    --md-sys-motion-duration-extra-long-1: 0ms;
+    --md-sys-motion-duration-extra-long-2: 0ms;
+  }
+}
+
