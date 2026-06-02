@@ -53,6 +53,34 @@
     });
   }
 
+  /* /brand — click a color swatch to copy its value (only runs if the
+     toast element is present, so this is a no-op on every other page). */
+
+  var brandToast = document.getElementById('brandToast');
+  if (brandToast) {
+    var toastTimer;
+    var showToast = function (msg) {
+      brandToast.textContent = msg;
+      brandToast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { brandToast.classList.remove('show'); }, 1500);
+    };
+    var swatches = document.querySelectorAll('.brand-swatch');
+    Array.prototype.forEach.call(swatches, function (el) {
+      el.addEventListener('click', function () {
+        var val = el.getAttribute('data-copy');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(val).then(
+            function () { showToast(val + ' copied'); },
+            function () { showToast(val); }
+          );
+        } else {
+          showToast(val);
+        }
+      });
+    });
+  }
+
   /* scroll top */
 
   var scrollTop = document.getElementById('scrollTop');
