@@ -1,6 +1,3 @@
-/* REWBI public site — UI bootstrap.
- * No deps. CSP-safe (no eval, no innerHTML with untrusted strings).
- */
 (function () {
   'use strict';
 
@@ -53,8 +50,83 @@
     });
   }
 
-  /* /brand — click a color swatch to copy its value (only runs if the
-     toast element is present, so this is a no-op on every other page). */
+  /* page tools */
+
+  function fetchPageText(url) {
+    return fetch(url, { credentials: 'same-origin' }).then(function (resp) {
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      return resp.text();
+    });
+  }
+
+  function legacyCopy(text) {
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      ok ? resolve() : reject(new Error('execCommand failed'));
+    });
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).catch(function () {
+        return legacyCopy(text);
+      });
+    }
+    return legacyCopy(text);
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy-page]'), function (btn) {
+    var label = btn.querySelector('.page-tool-label') || btn;
+    var original = label.textContent;
+    var resetTimer;
+    btn.addEventListener('click', function () {
+      var url = btn.getAttribute('data-copy-page');
+      if (!url) return;
+      fetchPageText(url).then(copyText).then(function () {
+        label.textContent = 'Copied \u2713';
+        btn.classList.add('is-copied');
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(function () {
+          label.textContent = original;
+          btn.classList.remove('is-copied');
+        }, 1800);
+      }).catch(function (err) {
+        console.error('Copy-for-LLM failed:', err);
+        label.textContent = 'Copy failed';
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(function () { label.textContent = original; }, 1800);
+      });
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-view-page]'), function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var url = btn.getAttribute('data-view-page');
+      if (!url) return;
+      // Open a tab synchronously (avoids popup blocking), then point it at a
+      // text/plain blob so the Markdown previews instead of downloading.
+      var win = window.open('', '_blank');
+      fetchPageText(url).then(function (text) {
+        var blobUrl = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
+        if (win) win.location = blobUrl; else window.location = blobUrl;
+      }).catch(function (err) {
+        console.error('View-as-Markdown failed:', err);
+        if (win) win.location = url;
+      });
+    });
+  });
+
+  /* swatch copy */
 
   var brandToast = document.getElementById('brandToast');
   if (brandToast) {
