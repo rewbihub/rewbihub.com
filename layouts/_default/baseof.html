@@ -115,7 +115,7 @@
 }
 </script>
 </head>
-<body>
+<body{{ if eq .Layout "brand" }} class="page-brand"{{ end }}>
 
 {{ partial "nav.html" . }}
 

@@ -34,6 +34,20 @@
   </div>
 </section>
 
+<nav class="brand-toc" aria-label="On this page">
+  <p class="brand-toc-cap">On this page</p>
+  <div class="brand-toc-inner">
+    <a href="#logo" class="brand-toc-link"><span class="brand-toc-num">01</span>Logo</a>
+    <a href="#construction" class="brand-toc-link"><span class="brand-toc-num">02</span>Construction</a>
+    <a href="#treatments" class="brand-toc-link"><span class="brand-toc-num">03</span>Backgrounds</a>
+    <a href="#color" class="brand-toc-link"><span class="brand-toc-num">04</span>Color</a>
+    <a href="#type" class="brand-toc-link"><span class="brand-toc-num">05</span>Typography</a>
+    <a href="#downloads" class="brand-toc-link"><span class="brand-toc-num">06</span>Assets</a>
+    <a href="#usage" class="brand-toc-link"><span class="brand-toc-num">07</span>Usage</a>
+    <a href="#naming" class="brand-toc-link"><span class="brand-toc-num">08</span>Naming</a>
+  </div>
+</nav>
+
 {{/* 01 Logo */}}
 <section class="section" id="logo">
   <div class="section-inner">
@@ -60,35 +74,66 @@
   <div class="section-inner">
     <header class="section-head">
       <p class="eyebrow"><span class="brand-eyebrow-num">02</span> &middot; Construction</p>
-      <h2 class="md-headline-large section-title">Clear space &amp; minimum size</h2>
-      <p class="md-body-large section-lede">Keep clear space around the logo and hold the minimum sizes so it stays legible. These proportions are part of the artwork, so don&rsquo;t rebuild it.</p>
+      <h2 class="md-headline-large section-title">Four numbers hold it together</h2>
+      <p class="md-body-large section-lede">Proportions are baked into the artwork &mdash; never rebuild or re-space it. Remember these four numbers and you can check any layout at a glance.</p>
     </header>
 
-    <div class="brand-construct-grid">
+    <ul class="brand-spec-band">
+      <li class="brand-spec">
+        <span class="brand-spec-num">2.2&hairsp;:&hairsp;1</span>
+        <span class="brand-spec-label">Icon to wordmark</span>
+        <span class="brand-spec-sub">A&thinsp;:&thinsp;C height ratio &mdash; fixed</span>
+      </li>
+      <li class="brand-spec">
+        <span class="brand-spec-num">25px</span>
+        <span class="brand-spec-label">Icon&ndash;wordmark gap</span>
+        <span class="brand-spec-sub">B at reference size (A&nbsp;=&nbsp;154px) &mdash; scales with the logo</span>
+      </li>
+      <li class="brand-spec">
+        <span class="brand-spec-num">1&hairsp;A</span>
+        <span class="brand-spec-label">Clear space</span>
+        <span class="brand-spec-sub">One icon-height square, on every side</span>
+      </li>
+      <li class="brand-spec">
+        <span class="brand-spec-num">25px</span>
+        <span class="brand-spec-label">Minimum height</span>
+        <span class="brand-spec-sub">On screen &middot; at least 0.5in wide in print</span>
+      </li>
+    </ul>
+
+    <figure class="brand-fig">
       <div class="brand-diagram">
-        <img src="/brand-assets/logo-construction.svg" alt="Logo construction diagram showing icon height (A), spacing between icon and wordmark (B), and wordmark height (C)">
+        <img src="/brand-assets/guidelines/logo-proportions.png" alt="Official proportions diagram: icon height (A), spacing between icon and wordmark (B), and wordmark height (C)">
       </div>
-      <div class="brand-construct-notes">
-        <p class="brand-sub">How to read it</p>
-        <ul>
-          <li><strong>A: icon height.</strong> This is your unit of clear space. Keep at least this much room on every side.</li>
-          <li><strong>B: spacing.</strong> The fixed gap between the icon and the wordmark. Don&rsquo;t change it.</li>
-          <li><strong>C: wordmark height.</strong> The wordmark is aligned to the icon. Always scale the two together.</li>
-        </ul>
-      </div>
+      <figcaption class="brand-fig-cap"><strong>Proportions.</strong> A is the icon height, B the spacing, C the wordmark height. Always scale the lockup as one piece &mdash; never alter the size relationship or the gap between icon and wordmark.</figcaption>
+    </figure>
+
+    <div class="brand-clearspace-grid">
+      <figure class="brand-fig">
+        <div class="brand-diagram">
+          <img src="/brand-assets/guidelines/clear-space-horizontal.png" alt="Clear space diagram for the horizontal lockup: one A square of empty space on every side">
+        </div>
+        <figcaption class="brand-fig-cap"><strong>Clear space.</strong> Keep one A square empty on every side of the lockup. Nothing enters the zone &mdash; no text, images, or other logos.</figcaption>
+      </figure>
+      <figure class="brand-fig">
+        <div class="brand-diagram is-mark">
+          <img src="/brand-assets/guidelines/clear-space-icon.png" alt="Clear space diagram for the mark alone: one A square of empty space on every side">
+        </div>
+        <figcaption class="brand-fig-cap"><strong>The mark alone.</strong> The same rule protects the icon when it appears by itself.</figcaption>
+      </figure>
     </div>
 
-    <div class="brand-construct-grid">
-      <div class="brand-diagram">
-        <img src="/brand-assets/logo-sizing.svg" alt="Logo sizing reference at 25, 50 and 100 pixels tall">
-      </div>
+    <div class="brand-construct-grid is-reversed">
       <div class="brand-construct-notes">
         <p class="brand-sub">Minimum size</p>
         <ul>
           <li>On screen, keep the horizontal lockup at least <strong>25px tall</strong>.</li>
           <li>In print, keep it at least <strong>0.5in (13mm)</strong> wide.</li>
-          <li>Below those sizes, use the mark on its own instead of shrinking the lockup.</li>
+          <li>Below those sizes, switch to the mark on its own instead of shrinking the lockup.</li>
         </ul>
+      </div>
+      <div class="brand-diagram">
+        <img src="/brand-assets/logo-sizing.svg" alt="Logo sizing reference at 25, 50 and 100 pixels tall">
       </div>
     </div>
   </div>
@@ -314,5 +359,28 @@
 </section>
 
 <div class="brand-toast" id="brandToast" role="status" aria-live="polite">Copied</div>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".brand-toc-link"));
+  if (!links.length || !("IntersectionObserver" in window)) { return; }
+  var byId = {};
+  links.forEach(function (l) { byId[l.getAttribute("href").slice(1)] = l; });
+  function setActive(id) {
+    links.forEach(function (l) { l.classList.remove("is-active"); l.removeAttribute("aria-current"); });
+    var link = byId[id];
+    if (link) { link.classList.add("is-active"); link.setAttribute("aria-current", "location"); }
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { setActive(entry.target.id); }
+    });
+  }, { rootMargin: "-35% 0px -55% 0px" });
+  Object.keys(byId).forEach(function (id) {
+    var section = document.getElementById(id);
+    if (section) { observer.observe(section); }
+  });
+})();
+</script>
 
 {{ end }}

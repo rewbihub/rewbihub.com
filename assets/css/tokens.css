@@ -240,7 +240,7 @@
      scrim. Stay constant across light + dark themes because the scrim itself
      is always dark; this preserves WCAG contrast regardless of mode. */
   --rewbi-on-hero:        #ffffff;
-  --rewbi-on-hero-accent: #ffd8a0;
+  --rewbi-on-hero-accent: #ffe4bd;
   --rewbi-on-hero-link:   #d4a85c;
 
   /* layout */
@@ -318,4 +318,3 @@
     --md-sys-motion-duration-extra-long-2: 0ms;
   }
 }
-

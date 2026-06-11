@@ -19,9 +19,15 @@ The logo is artwork, not type. Never recreate the wordmark in another font.
 
 These proportions are baked into the artwork. Don't rebuild it.
 
-- **A — icon height.** This is the clear-space unit. Keep at least this much empty room on every side of the lockup.
-- **B — spacing.** The fixed gap between the icon and the wordmark. Don't change it.
-- **C — wordmark height.** The wordmark is optically aligned to the icon. Always scale both together.
+- **A — icon height.** The base unit. A : C (icon height to wordmark height) is always **2.2 : 1**.
+- **B — spacing.** The fixed gap between the icon and the wordmark — **25px** at the reference size (A = 154px, C = 70px). It scales with the logo; don't change it.
+- **C — wordmark height.** The wordmark is optically aligned to the icon. Always scale both together — never alter the size relationship or spacing.
+
+Clear space:
+
+- Keep at least one A square (the icon height) of empty space on every side of the lockup.
+- The same rule protects the mark when it appears on its own.
+- Nothing enters the clear zone — no text, images, or other logos.
 
 Minimum size:
 

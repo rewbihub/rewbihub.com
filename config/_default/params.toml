@@ -2,7 +2,7 @@ description = "Build wealth through real estate. A clear, step-by-step course ta
 author = "Real Estate & Wealth Building Institute"
 contactEmail = "info@rewbihub.com"
 bookCallUrl = "/contact"
-loginUrl = "https://portal.rewbihub.com/"
+loginUrl = "https://auth.rewbihub.com/"
 applyUrl = "/contact"
 
 # Event popup. Flip showEventPopup = false to hide.
