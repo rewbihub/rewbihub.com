@@ -93,6 +93,20 @@
         <label for="f-message" class="md-textfield-label">Anything else we should know? <span class="hint">optional</span></label>
       </div>
 
+      <label class="sms-consent" for="f-sms-consent">
+        <input id="f-sms-consent" name="smsConsent" type="checkbox" value="yes" class="sms-consent-box">
+        <span class="sms-consent-text md-body-small">
+          By checking this box and submitting this form, you consent to receive text messages for marketing from REWBI. Reply STOP to opt out. Reply HELP for help. Message and data rates may apply. Message frequency may vary.
+        </span>
+      </label>
+
+      <label class="sms-consent" for="f-terms-consent">
+        <input id="f-terms-consent" name="termsConsent" type="checkbox" value="yes" required class="sms-consent-box">
+        <span class="sms-consent-text md-body-small">
+          I agree to the <a href="https://rewbihub.com/terms">Terms and Conditions</a> and <a href="https://rewbihub.com/privacy">Privacy Policy</a>.
+        </span>
+      </label>
+
       {{/* honeypot */}}
       <div class="hp-field" aria-hidden="true">
         <label for="f-company">Leave this field empty

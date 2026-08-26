@@ -255,6 +255,8 @@
       phone:     (fd.get('phone')     || '').toString().trim(),
       goals:     (fd.get('goals')     || '').toString().trim(),
       message:   (fd.get('message')   || '').toString().trim() || null,
+      smsConsent: fd.get('smsConsent') === 'yes',
+      termsConsent: fd.get('termsConsent') === 'yes',
       hp: (fd.get('company') || '').toString()
     };
   }
