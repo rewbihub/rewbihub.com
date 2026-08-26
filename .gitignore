@@ -5,5 +5,4 @@ resources/
 .DS_Store
 secrets/
 *.secret
-images/
 public/
