@@ -72,9 +72,12 @@
 
                 <ul class="upcoming-event-info">
                   {{ with .start_time }}
+                    {{ $start := dateFormat "3:04 PM" (time (printf "2026-01-01T%s:00" .)) }}
+                    {{ $end := "" }}
+                    {{ with $e.end_time }}{{ $end = dateFormat "3:04 PM" (time (printf "2026-01-01T%s:00" .)) }}{{ end }}
                     <li class="md-body-medium">
                       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                      <span>{{ . }}{{ with $e.end_time }} &ndash; {{ . }}{{ end }}{{ with $e.timezone }} &middot; {{ . }}{{ end }}</span>
+                      <span>{{ $start }}{{ with $end }} &ndash; {{ . }}{{ end }}{{ with $e.timezone }} &middot; {{ . }}{{ end }}</span>
                     </li>
                   {{ end }}
                   {{ if or .location (eq .format "virtual") }}
