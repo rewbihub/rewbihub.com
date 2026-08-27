@@ -50,47 +50,87 @@ Always pick the cut with the most contrast for its surface. Don't recolor the de
 
 ## 04 — Color
 
-A small, deliberate palette. Burgundy is primary; gold is the accent; neutrals carry text and surfaces.
+Two groups. Signature colors carry the brand; supportive colors give it room to breathe. Every color ships with four tints from the brand sheets. The fourteen tones used in code live in `brand-colors/palette.scss` with HEX, HSL, and RGB.
 
-### Burgundy
+### Signature
 
-| Name           | Hex      | Role                |
-|----------------|----------|---------------------|
-| Burgundy       | #610D2E  | Primary brand       |
-| Burgundy Dark  | #3E0A1D  | Depth, footers      |
-| Burgundy Mid   | #8A1A45  | Hover, accents      |
-| Burgundy Light | #F2E4EA  | Tinted surface      |
+| Name | Hex | Role |
+|---|---|---|
+| Dark Wine | #610D2E | Primary brand |
+| Warm Sand | #F4C688 | Top stop of the logo gradient |
+| Antique Bronze | #986822 | Base stop of the gradient, accents |
+| Black | #000000 | Single-ink artwork |
 
-### Gold
+### Supportive
 
-| Name          | Hex                | Role                       |
-|---------------|--------------------|----------------------------|
-| Gold Gradient | #F4C688 → #986822  | Authoritative gold (177°)  |
-| Gold (UI)     | #B78946            | Flat — digital UI          |
-| Gold Dark     | #6E4E22            | Text on light              |
-| Gold Light    | #F7EED8            | Tinted surface             |
+| Name | Hex | Role |
+|---|---|---|
+| Deep Espresso | #3A2B2B | Primary text |
+| Muted Sage | #8A9484 | Soft accent |
+| Soft Ivory | #F5F3EF | Page background |
+| Stone Gray | #D8D1C7 | Borders, dividers |
+| Gray | #666666 | Secondary text |
+| Silver | #999999 | Metadata, disabled |
+| White | #FFFFFF | Surfaces, knockout |
 
-### Neutrals
+### Tints in code
 
-| Name      | Hex      | Role               |
-|-----------|----------|--------------------|
-| Charcoal  | #1A1A1A  | Body text          |
-| Gray      | #6B6B6B  | Secondary text     |
-| Cream     | #FDFBF7  | Warm background    |
-| White     | #FFFFFF  | Surfaces, knockout |
+| Name | Hex | Role |
+|---|---|---|
+| Wine Mid | #813D58 | Hover on wine surfaces |
+| Wine Tint | #DFCFD5 | Wine tint, tags |
+| Sand Tint | #FBE8CF | Accent tint |
+
+### The gold gradient
+
+Gold is a vertical gradient between two signature colors, not a flat tone: Warm Sand #F4C688 at the top falling to Antique Bronze #986822 at the base. Hold the gradient wherever the process allows. Flatten to a single stop only where a gradient cannot render, such as single-color print, small foil, or embroidery. Never substitute an off-brand gold. Published CMYK builds are in section 06.
 
 ## 05 — Typography
 
-Two typefaces. That's it.
+Two typefaces, both self-hosted as woff2.
 
-- **Cormorant Garamond** — headlines, titles, editorial copy. Serif. Medium weight by default.
-- **Inter** — subheads, body, UI, anything digital. Sans-serif.
+- **Cormorant Garamond** — display and headlines. Ships Medium, Medium Italic, SemiBold, Bold.
+- **Inter** — body, subheads, and interface copy. Ships Regular, Italic, Medium, SemiBold, Bold.
 
-The logo wordmark is custom artwork. Never retype the name in either typeface.
+Set headlines in Cormorant Garamond to echo the engraved wordmark. Keep running text and interface copy in Inter. Reserve all-caps for short display lines. The logotype is engraved Trajan-style artwork, so never re-typeset the name.
 
-## 06 — Assets
+## 06 — Print (process CMYK)
 
-All source files live in the public brand repo. Pull from `main`:
+Vector PDFs for press and designer handoff. Color is written directly as `DeviceCMYK` — no RGB objects, no ICC profiles — and ink builds come from the REWBI Signature Colors sheet, not a generic conversion.
+
+Each file is 3 pages: horizontal lockup, vertical lockup, mark only. Pages are cropped tight to the artwork with the required clear space built in as padding.
+
+| File | Use on |
+|---|---|
+| `logo.pdf` | White and light backgrounds |
+| `logo-all-white.pdf` | Dark, burgundy, gold, or photographic backgrounds (knockout) |
+| `logo-all-black.pdf` | Single-color print, engraving, stamping |
+| `logo-inverse.pdf` | Busy light backgrounds; keeps a dark wordmark |
+| `logo-on-burgundy.pdf` | Backgrounds at or near #610D2E |
+| `logo-on-gold.pdf` | Backgrounds in the gold range |
+
+Ink builds:
+
+| Name | Hex | CMYK in file |
+|---|---|---|
+| Dark Wine | #610D2E | 40 / 98 / 60 / 50 |
+| Warm Sand | #F4C688 | 3 / 23 / 52 / 0 |
+| Antique Bronze | #986822 | 33 / 56 / 100 / 18 |
+| Black | #000000 | 0 / 0 / 0 / 100 |
+| White | #FFFFFF | 0 / 0 / 0 / 0 |
+
+Notes for the press:
+
+- Vector paths only — type outlined, no raster images, metadata stripped. No embedded output intent (not PDF/X); add one at the press if the job requires it.
+- Black is **100% K only** and white is **zero ink**, so single-ink and knockout jobs are already correct. The signature sheet's rich black (75/68/67/90) is for large solid fields, not logo linework — ask if you need that version.
+- Gold is a **gradient**, Warm Sand falling to Antique Bronze. Hold the gradient wherever the process allows; flat stops only where a gradient can't render.
+- Minimum print width: 0.5in for the horizontal lockup. Below that, use the mark alone.
+- Foil, letterpress, deboss, engraving: start from the all-black or all-white file.
+- Three colors used only by the **inverse** treatment sit outside the signature sheet and were converted arithmetically — #C69755 (0/24/58/22), #9A3454 (0/66/45/40), and #FAF6EF (0/2/4/2). Soft-proof them if you run that treatment.
+
+## 07 — Assets
+
+Nothing is mirrored on the site. Every file is pulled live from the public brand repo on `main`:
 
 - Repo home: <https://github.com/rewbihub/brand>
 - Horizontal lockup: <https://github.com/rewbihub/brand/raw/main/logos/logo-horizontal.svg>
@@ -100,9 +140,14 @@ All source files live in the public brand repo. Pull from `main`:
 - On burgundy: <https://github.com/rewbihub/brand/raw/main/logos/on-burgundy/logo-horizontal-on-burgundy.svg>
 - 1-color black: <https://github.com/rewbihub/brand/raw/main/logos/all-black/logo-horizontal-all-black.svg>
 
-PNGs and editable source for additional sizes and formats live in the same repo.
+The mark ships as square PNGs at 16, 32, 48, 64, 128, 256, 512, 1024, and 2048px; `favicon.ico` bundles 16, 24, 32, 48, and 64. The vector master is `icons/icon.svg`, with one file per treatment (`icon-all-black`, `icon-all-white`, `icon-inverse`, `icon-on-burgundy`, `icon-on-gold`). Every logo treatment ships both the horizontal and the vertical lockup. - Icon treatments: `icons/icon-inverse.svg`, `icon-all-white.svg`, `icon-all-black.svg`, `icon-on-burgundy.svg`, `icon-on-gold.svg`
+- Square marks: <https://github.com/rewbihub/brand/raw/main/icons/256x256.png> (also 16, 32, 48, 64, 128, 512, 1024, 2048)
+- `favicon.ico`: <https://github.com/rewbihub/brand/raw/main/icons/favicon.ico>
+- Print CMYK PDFs: <https://github.com/rewbihub/brand/raw/main/print/logo.pdf> (also `logo-all-white`, `logo-all-black`, `logo-inverse`, `logo-on-burgundy`, `logo-on-gold`)
 
-## 07 — Usage
+Editable source artwork lives in `src/` in the same repo.
+
+## 08 — Usage
 
 ### Do
 
@@ -118,13 +163,16 @@ PNGs and editable source for additional sizes and formats live in the same repo.
 - Retype the name in another typeface.
 - Place it on a busy or low-contrast background.
 
-## 08 — Naming
+## 09 — Naming
 
 Write the name the same way everywhere.
 
 - **Full name:** Real Estate & Wealth Building Institute
 - **Short form:** REWBI
 - **Always:** Use the ampersand `&`. Never spell out "and."
+- **Legal entity:** Real Estate and Wealth Building Institute LLC.
+
+"Real Estate & Wealth Building Institute" and the REWBI skyline mark are trademarks of the Real Estate and Wealth Building Institute LLC. Don't use them to imply endorsement or partnership without written permission.
 
 ---
 
