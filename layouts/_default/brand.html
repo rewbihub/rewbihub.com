@@ -1,13 +1,19 @@
-{{/* Brand facts here are mirrored in static/brand.md (Copy-for-LLM source) — keep both in sync. */}}
+{{/* Brand facts here are mirrored in static/brand.md (Copy-for-LLM source): keep both in sync. */}}
 {{ define "main" }}
 
-<section class="page-hero">
-  <div class="section-inner page-hero-inner">
-    <p class="eyebrow">Brand</p>
-    <h1 class="md-display-medium page-hero-title">Brand Guidelines</h1>
-    <p class="md-body-large page-hero-lede">Welcome to the REWBI brand. This is a quick look at the logo, color, and type that make us recognizable, and how to use them well wherever the institute shows up.</p>
+{{/* Hero: quiet, centered, warm paper. Sets the tone for the whole page. */}}
+<section class="brand-hero">
+  <div class="brand-hero-inner">
+    <img class="brand-hero-lockup" src="/brand-assets/logos/logo-horizontal.svg" alt="Real Estate &amp; Wealth Building Institute logo">
+    <h1 class="brand-hero-title">Brand Guidelines</h1>
+    <p class="brand-hero-tagline">The logo, color, and type that make REWBI recognizable, and the rules for using them well wherever the institute shows up.</p>
+    <div class="brand-hero-chips">
+      <span class="brand-chip">Burgundy #610D2E</span>
+      <span class="brand-chip">Warm Sand #F4C688</span>
+      <span class="brand-chip">Cormorant Garamond + Inter</span>
+    </div>
 
-    <div class="page-tools" role="group" aria-label="Page tools">
+    <div class="page-tools brand-hero-tools" role="group" aria-label="Page tools">
       <button type="button" class="page-tool" data-copy-page="/brand.md" aria-label="Copy brand guidelines as Markdown for use with an LLM">
         <svg class="page-tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
           <rect x="9" y="9" width="11" height="11" rx="2" stroke-width="1.7"></rect>
@@ -42,9 +48,10 @@
     <a href="#treatments" class="brand-toc-link"><span class="brand-toc-num">03</span>Backgrounds</a>
     <a href="#color" class="brand-toc-link"><span class="brand-toc-num">04</span>Color</a>
     <a href="#type" class="brand-toc-link"><span class="brand-toc-num">05</span>Typography</a>
-    <a href="#downloads" class="brand-toc-link"><span class="brand-toc-num">06</span>Assets</a>
-    <a href="#usage" class="brand-toc-link"><span class="brand-toc-num">07</span>Usage</a>
-    <a href="#naming" class="brand-toc-link"><span class="brand-toc-num">08</span>Naming</a>
+    <a href="#print" class="brand-toc-link"><span class="brand-toc-num">06</span>Print</a>
+    <a href="#downloads" class="brand-toc-link"><span class="brand-toc-num">07</span>Assets</a>
+    <a href="#usage" class="brand-toc-link"><span class="brand-toc-num">08</span>Usage</a>
+    <a href="#naming" class="brand-toc-link"><span class="brand-toc-num">09</span>Naming</a>
   </div>
 </nav>
 
@@ -75,19 +82,19 @@
     <header class="section-head">
       <p class="eyebrow"><span class="brand-eyebrow-num">02</span> &middot; Construction</p>
       <h2 class="md-headline-large section-title">Four numbers hold it together</h2>
-      <p class="md-body-large section-lede">Proportions are baked into the artwork &mdash; never rebuild or re-space it. Remember these four numbers and you can check any layout at a glance.</p>
+      <p class="md-body-large section-lede">Proportions are baked into the artwork, so never rebuild or re-space it. Remember these four numbers and you can check any layout at a glance.</p>
     </header>
 
     <ul class="brand-spec-band">
       <li class="brand-spec">
         <span class="brand-spec-num">2.2&hairsp;:&hairsp;1</span>
         <span class="brand-spec-label">Icon to wordmark</span>
-        <span class="brand-spec-sub">A&thinsp;:&thinsp;C height ratio &mdash; fixed</span>
+        <span class="brand-spec-sub">A&thinsp;:&thinsp;C height ratio, fixed</span>
       </li>
       <li class="brand-spec">
         <span class="brand-spec-num">25px</span>
-        <span class="brand-spec-label">Icon&ndash;wordmark gap</span>
-        <span class="brand-spec-sub">B at reference size (A&nbsp;=&nbsp;154px) &mdash; scales with the logo</span>
+        <span class="brand-spec-label">Icon-to-wordmark gap</span>
+        <span class="brand-spec-sub">B at reference size (A&nbsp;=&nbsp;154px). Scales with the logo</span>
       </li>
       <li class="brand-spec">
         <span class="brand-spec-num">1&hairsp;A</span>
@@ -105,7 +112,7 @@
       <div class="brand-diagram">
         <img src="/brand-assets/guidelines/logo-proportions.png" alt="Official proportions diagram: icon height (A), spacing between icon and wordmark (B), and wordmark height (C)">
       </div>
-      <figcaption class="brand-fig-cap"><strong>Proportions.</strong> A is the icon height, B the spacing, C the wordmark height. Always scale the lockup as one piece &mdash; never alter the size relationship or the gap between icon and wordmark.</figcaption>
+      <figcaption class="brand-fig-cap"><strong>Proportions.</strong> A is the icon height, B the spacing, C the wordmark height. Always scale the lockup as one piece. Never alter the size relationship or the gap between icon and wordmark.</figcaption>
     </figure>
 
     <div class="brand-clearspace-grid">
@@ -113,7 +120,7 @@
         <div class="brand-diagram">
           <img src="/brand-assets/guidelines/clear-space-horizontal.png" alt="Clear space diagram for the horizontal lockup: one A square of empty space on every side">
         </div>
-        <figcaption class="brand-fig-cap"><strong>Clear space.</strong> Keep one A square empty on every side of the lockup. Nothing enters the zone &mdash; no text, images, or other logos.</figcaption>
+        <figcaption class="brand-fig-cap"><strong>Clear space.</strong> Keep one A square empty on every side of the lockup. Nothing enters the zone: no text, images, or other logos.</figcaption>
       </figure>
       <figure class="brand-fig">
         <div class="brand-diagram is-mark">
@@ -181,7 +188,7 @@
       <p class="brand-sub">Gold</p>
       <div class="brand-swatch-grid">
         <button type="button" class="brand-swatch" data-copy="#F4C688 → #986822"><span class="brand-swatch-fill brand-swatch-fill--gold-gradient"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Gold Gradient</span><span class="brand-swatch-hex">#F4C688 → #986822</span><span class="brand-swatch-role">Authoritative gold</span></span></button>
-        <button type="button" class="brand-swatch" data-copy="#B78946"><span class="brand-swatch-fill brand-swatch-fill--gold"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Gold (UI)</span><span class="brand-swatch-hex">#B78946</span><span class="brand-swatch-role">Flat &mdash; digital UI</span></span></button>
+        <button type="button" class="brand-swatch" data-copy="#B78946"><span class="brand-swatch-fill brand-swatch-fill--gold"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Gold (UI)</span><span class="brand-swatch-hex">#B78946</span><span class="brand-swatch-role">Flat, for digital UI</span></span></button>
         <button type="button" class="brand-swatch" data-copy="#6E4E22"><span class="brand-swatch-fill brand-swatch-fill--gold-dark"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Gold Dark</span><span class="brand-swatch-hex">#6E4E22</span><span class="brand-swatch-role">Text on light</span></span></button>
         <button type="button" class="brand-swatch" data-copy="#F7EED8"><span class="brand-swatch-fill brand-swatch-fill--gold-light bordered"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Gold Light</span><span class="brand-swatch-hex">#F7EED8</span><span class="brand-swatch-role">Tinted surface</span></span></button>
       </div>
@@ -224,11 +231,106 @@
   </div>
 </section>
 
-{{/* 06 Downloads */}}
+{{/* 06 Print */}}
+<section class="section section-alt" id="print">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow"><span class="brand-eyebrow-num">06</span> &middot; Print</p>
+      <h2 class="md-headline-large section-title">Process-CMYK files for press</h2>
+      <p class="md-body-large section-lede">Send these to a printer or a graphic designer. Color is written directly as <span class="brand-code">DeviceCMYK</span> ink values, with no RGB objects and no ICC profiles left in the file. The ink builds come from the REWBI Signature Colors sheet, not a generic conversion.</p>
+    </header>
+
+    <ul class="brand-spec-band">
+      <li class="brand-spec">
+        <span class="brand-spec-num">3</span>
+        <span class="brand-spec-label">Pages per file</span>
+        <span class="brand-spec-sub">Horizontal lockup &middot; vertical lockup &middot; mark</span>
+      </li>
+      <li class="brand-spec">
+        <span class="brand-spec-num">100%&hairsp;K</span>
+        <span class="brand-spec-label">Black</span>
+        <span class="brand-spec-sub">Single-ink safe. White is zero ink</span>
+      </li>
+      <li class="brand-spec">
+        <span class="brand-spec-num">0.5in</span>
+        <span class="brand-spec-label">Minimum print width</span>
+        <span class="brand-spec-sub">Below that, use the mark alone</span>
+      </li>
+      <li class="brand-spec">
+        <span class="brand-spec-num">Vector</span>
+        <span class="brand-spec-label">Paths only</span>
+        <span class="brand-spec-sub">Type outlined &middot; no raster &middot; metadata stripped</span>
+      </li>
+    </ul>
+
+    <p class="brand-sub">Ink builds</p>
+    <div class="brand-table-wrap">
+      <table class="brand-table">
+        <thead>
+          <tr><th scope="col">Name</th><th scope="col">Hex</th><th scope="col">CMYK in file</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="brand-ink brand-ink--wine" aria-hidden="true"></span>Dark Wine</td><td class="brand-code">#610D2E</td><td class="brand-code">40 / 98 / 60 / 50</td></tr>
+          <tr><td><span class="brand-ink brand-ink--sand" aria-hidden="true"></span>Warm Sand</td><td class="brand-code">#F4C688</td><td class="brand-code">3 / 23 / 52 / 0</td></tr>
+          <tr><td><span class="brand-ink brand-ink--bronze" aria-hidden="true"></span>Antique Bronze</td><td class="brand-code">#986822</td><td class="brand-code">33 / 56 / 100 / 18</td></tr>
+          <tr><td><span class="brand-ink brand-ink--black" aria-hidden="true"></span>Black</td><td class="brand-code">#000000</td><td class="brand-code">0 / 0 / 0 / 100</td></tr>
+          <tr><td><span class="brand-ink brand-ink--white" aria-hidden="true"></span>White</td><td class="brand-code">#FFFFFF</td><td class="brand-code">0 / 0 / 0 / 0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="brand-sub">The six files</p>
+    <div class="brand-print-grid">
+      <a class="brand-print" href="/brand-assets/print/logo.pdf" download>
+        <span class="brand-print-name">logo.pdf</span>
+        <span class="brand-print-use">White and light backgrounds</span>
+        <span class="brand-print-cta">Download PDF</span>
+      </a>
+      <a class="brand-print" href="/brand-assets/print/logo-all-white.pdf" download>
+        <span class="brand-print-name">logo-all-white.pdf</span>
+        <span class="brand-print-use">Dark, burgundy, gold, or photographic backgrounds (knockout)</span>
+        <span class="brand-print-cta">Download PDF</span>
+      </a>
+      <a class="brand-print" href="/brand-assets/print/logo-all-black.pdf" download>
+        <span class="brand-print-name">logo-all-black.pdf</span>
+        <span class="brand-print-use">Single-color print, engraving, stamping</span>
+        <span class="brand-print-cta">Download PDF</span>
+      </a>
+      <a class="brand-print" href="/brand-assets/print/logo-inverse.pdf" download>
+        <span class="brand-print-name">logo-inverse.pdf</span>
+        <span class="brand-print-use">Busy light backgrounds; keeps a dark wordmark</span>
+        <span class="brand-print-cta">Download PDF</span>
+      </a>
+      <a class="brand-print" href="/brand-assets/print/logo-on-burgundy.pdf" download>
+        <span class="brand-print-name">logo-on-burgundy.pdf</span>
+        <span class="brand-print-use">Backgrounds at or near #610D2E</span>
+        <span class="brand-print-cta">Download PDF</span>
+      </a>
+      <a class="brand-print" href="/brand-assets/print/logo-on-gold.pdf" download>
+        <span class="brand-print-name">logo-on-gold.pdf</span>
+        <span class="brand-print-use">Backgrounds in the gold range</span>
+        <span class="brand-print-cta">Download PDF</span>
+      </a>
+    </div>
+
+    <div class="brand-notes">
+      <p class="brand-sub">Notes for the press</p>
+      <ul>
+        <li><strong>Gold is a gradient,</strong> not a flat tone: Warm Sand at the top falling to Antique Bronze at the base. Hold the gradient wherever the process allows, and use a flat stop only where a gradient cannot render.</li>
+        <li><strong>On black,</strong> these files use 100% K rather than a rich black, because the black here is fine linework where four-color black invites registration problems. Ask if you need a rich-black version for a large solid field.</li>
+        <li>Clear space on all sides equals the height of the mark&rsquo;s shortest tower. One-ink jobs: <span class="brand-code">logo-all-black.pdf</span> at 100% K, or <span class="brand-code">logo-all-white.pdf</span> as a knockout.</li>
+        <li>Foil, letterpress, deboss, and engraving start from the all-black or all-white file. Pages carry no crop marks or bleed, and no embedded output intent. Add one at the press if the job requires PDF/X.</li>
+        <li>Three colors used only by the <strong>inverse</strong> treatment sit outside the signature sheet and were converted arithmetically: <span class="brand-code">#C69755</span> (0/24/58/22), <span class="brand-code">#9A3454</span> (0/66/45/40), and <span class="brand-code">#FAF6EF</span> (0/2/4/2). Soft-proof them if you run that treatment.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{{/* 07 Downloads */}}
 <section class="section section-alt" id="downloads">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">06</span> &middot; Assets</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">07</span> &middot; Assets</p>
       <h2 class="md-headline-large section-title">Download the logo files</h2>
       <p class="md-body-large section-lede">Files come straight from the brand repo on GitHub, where you&rsquo;ll also find PNGs, other sizes, and the editable source.</p>
     </header>
@@ -304,18 +406,36 @@
 
     </div>
 
+    <div class="brand-marksizes">
+      <p class="brand-sub">The mark, square, at every size</p>
+      <p class="brand-marksizes-lede">PNGs are exported at 16, 32, 48, 64, 128, 256, 512, 1024, and 2048px, plus <span class="brand-code">favicon.ico</span> and an inverse SVG cut.</p>
+      <div class="brand-marksizes-row">
+        <a class="brand-marksize" href="/brand-assets/icons/mark-1024.png" download><img src="/brand-assets/icons/mark-128.png" alt="" width="88" height="88"><span>1024</span></a>
+        <a class="brand-marksize" href="/brand-assets/icons/mark-512.png" download><img src="/brand-assets/icons/mark-128.png" alt="" width="64" height="64"><span>512</span></a>
+        <a class="brand-marksize" href="/brand-assets/icons/mark-256.png" download><img src="/brand-assets/icons/mark-128.png" alt="" width="48" height="48"><span>256</span></a>
+        <a class="brand-marksize" href="/brand-assets/icons/mark-128.png" download><img src="/brand-assets/icons/mark-128.png" alt="" width="36" height="36"><span>128</span></a>
+        <a class="brand-marksize" href="/brand-assets/icons/mark-64.png" download><img src="/brand-assets/icons/mark-64.png" alt="" width="28" height="28"><span>64</span></a>
+        <a class="brand-marksize" href="/brand-assets/icons/mark-32.png" download><img src="/brand-assets/icons/mark-32.png" alt="" width="20" height="20"><span>32</span></a>
+        <a class="brand-marksize" href="/brand-assets/icons/mark-16.png" download><img src="/brand-assets/icons/mark-16.png" alt="" width="16" height="16"><span>16</span></a>
+      </div>
+      <div class="brand-notes-actions">
+        <a class="md-button md-button-tonal" href="/brand-assets/icons/favicon.ico" download>favicon.ico</a>
+        <a class="md-button md-button-tonal" href="/brand-assets/icons/icon-inverse.svg" download>Inverse mark (SVG)</a>
+      </div>
+    </div>
+
     <div class="brand-source-note">
-      <p>Explore additional sizes, formats, and editable source files in the REWBI brand repository on GitHub.</p>
+      <p>Additional sizes, formats, and editable source files are in the REWBI brand repository on GitHub.</p>
       <a class="md-button md-button-outlined" href="https://github.com/rewbihub/brand" target="_blank" rel="noopener noreferrer">Open the brand repo<span class="visually-hidden"> (opens in new window)</span></a>
     </div>
   </div>
 </section>
 
-{{/* 07 Usage */}}
+{{/* 08 Usage */}}
 <section class="section" id="usage">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">07</span> &middot; Usage</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">08</span> &middot; Usage</p>
       <h2 class="md-headline-large section-title">Dos and don&rsquo;ts</h2>
       <p class="md-body-large section-lede">Follow these to keep the logo consistent everywhere it appears.</p>
     </header>
@@ -342,11 +462,11 @@
   </div>
 </section>
 
-{{/* 08 Naming */}}
+{{/* 09 Naming */}}
 <section class="section section-alt" id="naming">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">08</span> &middot; Naming</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">09</span> &middot; Naming</p>
       <h2 class="md-headline-large section-title">How to write the name</h2>
       <p class="md-body-large section-lede">Write the name the same way everywhere.</p>
     </header>
@@ -355,6 +475,7 @@
       <div class="brand-nbox"><div class="brand-nbox-k">Short form</div><div class="brand-nbox-v"><strong>REWBI</strong></div></div>
       <div class="brand-nbox"><div class="brand-nbox-k">Always</div><div class="brand-nbox-v">Use the ampersand <strong>&amp;</strong>, not &ldquo;and.&rdquo;</div></div>
     </div>
+    <p class="brand-trademark">&ldquo;Real Estate &amp; Wealth Building Institute&rdquo; and the REWBI skyline mark are trademarks of the Real Estate and Wealth Building Institute LLC. Don&rsquo;t use them to imply endorsement or partnership without written permission.</p>
   </div>
 </section>
 
