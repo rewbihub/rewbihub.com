@@ -29,8 +29,8 @@
   --md-sys-color-secondary-container:     var(--rewbi-gold-light);
   --md-sys-color-on-secondary-container:  var(--rewbi-gold-dark);
 
-  /* tertiary — complementary accent role; uses gold-dark family for contrast against
-     burgundy primary while staying inside the brand palette */
+  /* tertiary: complementary accent. Gold-dark for contrast against the burgundy
+     primary while staying inside the brand palette. */
   --md-sys-color-tertiary:                var(--rewbi-gold-dark);
   --md-sys-color-on-tertiary:             var(--rewbi-white);
   --md-sys-color-tertiary-container:      #f3e3c2;
@@ -59,7 +59,7 @@
   --md-sys-color-error-container:         #fce4e1;
   --md-sys-color-on-error-container:      #5b1208;
 
-  /* scrim is an MD3 role; success is a REWBI custom (not in MD3 spec) */
+  /* scrim is an MD3 role; success is a REWBI addition */
   --md-sys-color-scrim:                   rgba(26, 26, 26, 0.4);
   --rewbi-color-success:                  #27856a;
 
@@ -231,8 +231,8 @@
   --md-sys-spacing-20: 80px;
   --md-sys-spacing-24: 96px;
 
-  /* brand accent — used for non-CTA accents (links, badges, focus, eyebrows).
-     burgundy in light, lifts to gold in dark for readability. */
+  /* brand accent for links, badges, focus rings and eyebrows.
+     Burgundy in light, gold in dark for readability. */
   --rewbi-accent:    var(--rewbi-burgundy);
   --rewbi-on-accent: var(--rewbi-white);
 
@@ -249,11 +249,10 @@
   --rewbi-content-narrow:720px;
 }
 
-/* dark theme — opt-in only via data-theme="dark" on <html> (set by theme-toggle.js).
-   OLED-friendly: surface = true black; container hierarchy uses very dark warm
-   neutrals so depth still reads on OLED displays without burning pixels.
-   The @media (prefers-color-scheme: dark) block has been removed so the site
-   defaults to light regardless of OS preference. */
+/* Dark theme. Opt-in only, via data-theme="dark" on <html> (set by
+   theme-toggle.js); the site defaults to light regardless of OS preference.
+   Surface is true black with lifted warm-neutral containers so depth still
+   reads on OLED without burning pixels. */
 :root[data-theme="dark"] {
   --md-sys-color-primary:                 #610d2e;
   --md-sys-color-on-primary:              #ffffff;
@@ -270,7 +269,7 @@
   --md-sys-color-tertiary-container:      #683f1f;
   --md-sys-color-on-tertiary-container:   #ffdcbe;
 
-  /* OLED surface family — true black base, lifted containers for depth */
+  /* OLED surface family: true black base, lifted containers for depth */
   --md-sys-color-surface:                  #000000;
   --md-sys-color-surface-dim:              #000000;
   --md-sys-color-surface-bright:           #28221a;

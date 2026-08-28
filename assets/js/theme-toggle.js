@@ -1,5 +1,5 @@
-/* REWBI theme toggle — manual override of prefers-color-scheme,
- * persisted in localStorage, applied as data-theme on <html>. */
+/* Theme toggle. Overrides prefers-color-scheme, persists the choice in
+ * localStorage, and applies it as data-theme on <html>. */
 (function () {
   'use strict';
 

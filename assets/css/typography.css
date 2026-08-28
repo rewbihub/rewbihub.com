@@ -1,8 +1,9 @@
-/* typography — Hugo-templated; @font-face uses fingerprinted RelPermalink (run via ExecuteAsTemplate in baseof.html). */
+/* Typography. Hugo templates this file through ExecuteAsTemplate so @font-face
+   can use fingerprinted font URLs. */
 
-/* faces — all self-hosted from assets/fonts/{cormorant,inter} */
+/* faces, all self-hosted from assets/fonts/ */
 
-/* Cormorant Garamond — brand / display */
+/* Cormorant Garamond: brand and display */
 @font-face {
   font-family: "Cormorant Garamond";
   font-style: normal;
@@ -32,7 +33,7 @@
   src: url("{{ (resources.Get "fonts/cormorant/CormorantGaramond-Bold.woff2" | fingerprint).RelPermalink }}") format("woff2");
 }
 
-/* Inter — plain / UI / body */
+/* Inter: UI and body */
 @font-face {
   font-family: "Inter";
   font-style: normal;

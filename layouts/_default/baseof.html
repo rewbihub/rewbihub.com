@@ -62,12 +62,21 @@
       imagesizes="100vw">
 {{ end }}
 
-{{/* css pipeline */}}
+{{/* css pipeline: shared base plus at most one per-page sheet */}}
 {{- $tokens     := resources.Get "css/tokens.css" -}}
 {{- $typography := resources.Get "css/typography.css" | resources.ExecuteAsTemplate "css/typography.rendered.css" . -}}
 {{- $components := resources.Get "css/components.css" -}}
 {{- $main       := resources.Get "css/main.css" -}}
-{{- $css        := slice $tokens $typography $components $main | resources.Concat "css/app.css" | resources.Minify | resources.Fingerprint -}}
+{{- $sheets  := slice $tokens $typography $components $main -}}
+{{- $variant := "app" -}}
+{{- if eq .Layout "brand" -}}
+  {{- $sheets = $sheets | append (resources.Get "css/pages/brand.css") -}}
+  {{- $variant = "app-brand" -}}
+{{- else if or (eq .Layout "terms") (eq .Layout "privacy") -}}
+  {{- $sheets = $sheets | append (resources.Get "css/pages/legal.css") -}}
+  {{- $variant = "app-legal" -}}
+{{- end -}}
+{{- $css := $sheets | resources.Concat (printf "css/%s.css" $variant) | resources.Minify | resources.Fingerprint -}}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
 {{/* schema */}}

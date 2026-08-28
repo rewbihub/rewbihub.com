@@ -7,7 +7,7 @@ applyUrl = "/contact"
 
 # Event popup. Flip showEventPopup = false to hide.
 showEventPopup = false
-eventPopupImage = "/images/foreclosures-2026-05-12.png"
+eventPopupImage = "/images/events/foreclosures-and-auctions-the-investors-playbook-2026-05-12.webp"
 eventPopupLink  = "https://forms.gle/3MEu7AGMRzwCRLtc6"
 
 [social]
