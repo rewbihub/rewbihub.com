@@ -159,12 +159,18 @@
   if (scrollTop) {
     var threshold = 600;
     var ticking = false;
+    var shown = null;
     function syncScrollTop() {
       var show = window.scrollY > threshold;
-      if (show) {
-        scrollTop.removeAttribute('hidden');
-      } else {
-        scrollTop.setAttribute('hidden', '');
+      // Only touch the DOM on an actual state change. Writing every frame
+      // invalidates layout and forces a reflow on the next scrollY read.
+      if (show !== shown) {
+        shown = show;
+        if (show) {
+          scrollTop.removeAttribute('hidden');
+        } else {
+          scrollTop.setAttribute('hidden', '');
+        }
       }
       ticking = false;
     }
