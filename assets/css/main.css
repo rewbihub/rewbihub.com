@@ -2013,7 +2013,7 @@ a.contact-list-value { color: var(--rewbi-accent); }
   }
   .brand-toc-link.is-active .brand-toc-num { color: var(--rewbi-accent); }
 }
-#logo, #construction, #treatments, #color, #type, #print, #downloads, #usage, #naming { scroll-margin-top: calc(var(--rewbi-nav-h) + 56px); }
+#intro, #logo, #construction, #digital, #color, #type, #print, #downloads, #naming { scroll-margin-top: calc(var(--rewbi-nav-h) + 56px); }
 
 /* brand page — construction spec stats */
 .brand-spec-band {
@@ -2283,6 +2283,9 @@ a.contact-list-value { color: var(--rewbi-accent); }
 }
 .brand-nbox-v { font-size: 1.0625rem; color: var(--md-sys-color-on-surface); }
 .brand-nbox-v strong { color: var(--rewbi-accent); font-weight: 600; }
+.brand-naming.is-two { grid-template-columns: repeat(2, 1fr); }
+.brand-nbox-v p { margin: 0; font-family: var(--md-ref-typeface-plain); font-size: .9375rem; line-height: 1.65; color: var(--md-sys-color-on-surface-variant); text-wrap: pretty; }
+@media (max-width: 719px) { .brand-naming.is-two { grid-template-columns: 1fr; } }
 
 /* copy toast */
 .brand-toast {
@@ -2400,6 +2403,7 @@ a.contact-list-value { color: var(--rewbi-accent); }
 .brand-hero-tagline{margin:22px 0 0;max-width:56ch;color:var(--md-sys-color-on-surface-variant);font-size:1.0625rem;line-height:1.65;text-wrap:pretty}
 .brand-hero-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
 .brand-chip{font-family:var(--md-ref-typeface-plain);font-size:.6875rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--md-sys-color-on-surface-variant);border:1px solid var(--md-sys-color-outline-variant);border-radius:var(--md-sys-shape-corner-full);padding:8px 15px;background:var(--md-sys-color-surface)}
+.brand-hero-cta{display:flex;justify-content:center;margin-top:28px}
 .brand-hero-tools{justify-content:center;border-top:0;margin-top:var(--md-sys-spacing-5);padding-top:0}
 
 /* brand page — inline code + tables */

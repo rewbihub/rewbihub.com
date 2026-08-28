@@ -1,16 +1,19 @@
 {{/* Brand facts here are mirrored in static/brand.md (Copy-for-LLM source): keep both in sync. */}}
 {{ define "main" }}
 
-{{/* Hero: quiet, centered, warm paper. Sets the tone for the whole page. */}}
 <section class="brand-hero">
   <div class="brand-hero-inner">
     <img class="brand-hero-lockup" src="/brand-assets/logos/logo-horizontal.svg" alt="Real Estate &amp; Wealth Building Institute logo" width="460" height="106">
-    <h1 class="brand-hero-title">Brand Guidelines</h1>
-    <p class="brand-hero-tagline">The logo, color, and type that make REWBI recognizable, and the rules for using them well wherever the institute shows up.</p>
+    <h1 class="brand-hero-title">Brand Style Guide</h1>
+    <p class="brand-hero-tagline">Everything you need to represent the Real Estate &amp; Wealth Building Institute correctly: the logo system, the colors, the type, and the files to download.</p>
     <div class="brand-hero-chips">
-      <span class="brand-chip">Burgundy #610D2E</span>
+      <span class="brand-chip">Dark Wine #610D2E</span>
       <span class="brand-chip">Warm Sand #F4C688</span>
       <span class="brand-chip">Cormorant Garamond + Inter</span>
+    </div>
+
+    <div class="brand-hero-cta">
+      <a class="md-button md-button-filled" href="#downloads">Download the logo</a>
     </div>
 
     <div class="page-tools brand-hero-tools" role="group" aria-label="Page tools">
@@ -41,48 +44,88 @@
 </section>
 
 <nav class="brand-toc" aria-label="On this page">
-  <p class="brand-toc-cap">On this page</p>
+  <p class="brand-toc-cap">Contents</p>
   <div class="brand-toc-inner">
-    <a href="#logo" class="brand-toc-link"><span class="brand-toc-num">01</span>Logo</a>
-    <a href="#construction" class="brand-toc-link"><span class="brand-toc-num">02</span>Construction</a>
-    <a href="#treatments" class="brand-toc-link"><span class="brand-toc-num">03</span>Backgrounds</a>
-    <a href="#color" class="brand-toc-link"><span class="brand-toc-num">04</span>Color</a>
-    <a href="#type" class="brand-toc-link"><span class="brand-toc-num">05</span>Typography</a>
-    <a href="#print" class="brand-toc-link"><span class="brand-toc-num">06</span>Print</a>
-    <a href="#downloads" class="brand-toc-link"><span class="brand-toc-num">07</span>Assets</a>
-    <a href="#usage" class="brand-toc-link"><span class="brand-toc-num">08</span>Usage</a>
+    <a href="#intro" class="brand-toc-link"><span class="brand-toc-num">01</span>Introduction</a>
+    <a href="#logo" class="brand-toc-link"><span class="brand-toc-num">02</span>Logo system</a>
+    <a href="#construction" class="brand-toc-link"><span class="brand-toc-num">03</span>Logo usage</a>
+    <a href="#digital" class="brand-toc-link"><span class="brand-toc-num">04</span>Digital identity</a>
+    <a href="#color" class="brand-toc-link"><span class="brand-toc-num">05</span>Color palette</a>
+    <a href="#type" class="brand-toc-link"><span class="brand-toc-num">06</span>Typography</a>
+    <a href="#print" class="brand-toc-link"><span class="brand-toc-num">07</span>Print</a>
+    <a href="#downloads" class="brand-toc-link"><span class="brand-toc-num">08</span>Downloads</a>
     <a href="#naming" class="brand-toc-link"><span class="brand-toc-num">09</span>Naming</a>
   </div>
 </nav>
 
-{{/* 01 Logo */}}
-<section class="section" id="logo">
+{{/* 01 Introduction */}}
+<section class="section" id="intro">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">01</span> &middot; The Logo</p>
-      <h2 class="md-headline-large section-title">The skyline mark &amp; wordmark</h2>
-      <p class="md-body-large section-lede">Use the horizontal lockup by default. Reach for the vertical lockup only when width is limited, like avatars, signage, and centered layouts.</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">01</span> &middot; Introduction</p>
+      <h2 class="md-headline-large section-title">Brand overview</h2>
+      <p class="md-body-large section-lede">Real Estate &amp; Wealth Building Institute empowers investors through education, mentorship, and community-driven opportunities designed to create long-term financial growth and generational wealth.</p>
     </header>
-    <div class="brand-lockups">
-      <div class="brand-frame">
-        <img src="/brand-assets/logos/logo-horizontal.svg" alt="REWBI horizontal logo lockup">
-        <span class="brand-frame-cap">Horizontal &middot; default</span>
+    <div class="brand-naming is-two">
+      <div class="brand-nbox">
+        <div class="brand-nbox-k">Vision</div>
+        <div class="brand-nbox-v"><p>To build a trusted real estate community where education, opportunity, and strategic partnerships empower individuals to create long-term wealth and financial freedom.</p></div>
       </div>
-      <div class="brand-frame is-vertical">
-        <img src="/brand-assets/logos/logo-vertical.svg" alt="REWBI vertical logo lockup">
-        <span class="brand-frame-cap">Vertical &middot; tight spaces</span>
+      <div class="brand-nbox">
+        <div class="brand-nbox-k">Mission</div>
+        <div class="brand-nbox-v"><p>To provide investors with practical knowledge, mentorship, and industry connections that support confident decision-making and sustainable generational growth.</p></div>
+      </div>
+      <div class="brand-nbox">
+        <div class="brand-nbox-k">Core values</div>
+        <div class="brand-nbox-v"><p>Community, education, trust, and long-term growth are the foundation of the institute. Every interaction, partnership, and learning experience is designed to support confident investing and generational wealth building.</p></div>
+      </div>
+      <div class="brand-nbox">
+        <div class="brand-nbox-k">Tone of voice</div>
+        <div class="brand-nbox-v"><p>The brand communicates with clarity, confidence, and professionalism while staying approachable and community-focused. Messaging should feel educational, trustworthy, and grounded.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-{{/* 02 Construction */}}
-<section class="section section-alt" id="construction">
+{{/* 02 Logo system */}}
+<section class="section section-alt" id="logo">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">02</span> &middot; Construction</p>
-      <h2 class="md-headline-large section-title">Four numbers hold it together</h2>
-      <p class="md-body-large section-lede">Proportions are baked into the artwork, so never rebuild or re-space it. Remember these four numbers and you can check any layout at a glance.</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">02</span> &middot; Logo system</p>
+      <h2 class="md-headline-large section-title">Core logo and alternative</h2>
+      <p class="md-body-large section-lede">The core logo is the horizontal lockup. Use it by default. The alternative is the vertical lockup, for centered compositions and narrow spaces like avatars and signage.</p>
+    </header>
+    <div class="brand-lockups">
+      <div class="brand-frame">
+        <img src="/brand-assets/logos/logo-horizontal.svg" alt="REWBI horizontal logo lockup">
+        <span class="brand-frame-cap">Core &middot; horizontal</span>
+      </div>
+      <div class="brand-frame is-vertical">
+        <img src="/brand-assets/logos/logo-vertical.svg" alt="REWBI vertical logo lockup">
+        <span class="brand-frame-cap">Alternative &middot; vertical</span>
+      </div>
+    </div>
+
+    <p class="brand-sub">Variations for each background</p>
+    <p class="brand-marksizes-lede">Pick the version with the most contrast against your background rather than recoloring the core logo. Every variation ships in both horizontal and vertical.</p>
+    <div class="brand-treatments">
+      <div class="brand-panel on-white"><img src="/brand-assets/logos/logo-horizontal.svg" alt="Logo on white"><span class="brand-panel-tag">On white</span></div>
+      <div class="brand-panel on-dark"><img src="/brand-assets/logos/all-white/logo-horizontal-all-white.svg" alt="Logo on dark"><span class="brand-panel-tag">On dark</span></div>
+      <div class="brand-panel on-burgundy"><img src="/brand-assets/logos/on-burgundy/logo-horizontal-on-burgundy.svg" alt="Logo on burgundy"><span class="brand-panel-tag">On burgundy</span></div>
+      <div class="brand-panel on-gold"><img src="/brand-assets/logos/on-gold/logo-horizontal-on-gold.svg" alt="Logo on gold"><span class="brand-panel-tag">On gold</span></div>
+      <div class="brand-panel on-cloud"><img src="/brand-assets/logos/inverse/logo-horizontal-inverse.svg" alt="Logo on busy light background"><span class="brand-panel-tag">Busy light</span></div>
+      <div class="brand-panel on-white"><img src="/brand-assets/logos/all-black/logo-horizontal-all-black.svg" alt="Single-color black logo"><span class="brand-panel-tag">One-color black</span></div>
+    </div>
+  </div>
+</section>
+
+{{/* 03 Logo usage */}}
+<section class="section" id="construction">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow"><span class="brand-eyebrow-num">03</span> &middot; Logo usage</p>
+      <h2 class="md-headline-large section-title">Spacing, clear space, minimum size</h2>
+      <p class="md-body-large section-lede">The proportions are already built into the artwork, so scale the lockup as one piece and never rebuild or re-space it. These four numbers let you check any layout at a glance.</p>
     </header>
 
     <ul class="brand-spec-band">
@@ -93,7 +136,7 @@
       </li>
       <li class="brand-spec">
         <span class="brand-spec-num">25px</span>
-        <span class="brand-spec-label">Icon-to-wordmark gap</span>
+        <span class="brand-spec-label">Gap between the two</span>
         <span class="brand-spec-sub">B at reference size (A&nbsp;=&nbsp;154px). Scales with the logo</span>
       </li>
       <li class="brand-spec">
@@ -112,7 +155,7 @@
       <div class="brand-diagram">
         <img src="/brand-assets/guidelines/logo-proportions.png" alt="Official proportions diagram: icon height (A), spacing between icon and wordmark (B), and wordmark height (C)">
       </div>
-      <figcaption class="brand-fig-cap"><strong>Proportions.</strong> A is the icon height, B the spacing, C the wordmark height. Always scale the lockup as one piece. Never alter the size relationship or the gap between icon and wordmark.</figcaption>
+      <figcaption class="brand-fig-cap"><strong>Proportions.</strong> A is the icon height, B the spacing, C the wordmark height. Never alter the size relationship or the gap between icon and wordmark.</figcaption>
     </figure>
 
     <div class="brand-clearspace-grid">
@@ -120,7 +163,7 @@
         <div class="brand-diagram">
           <img src="/brand-assets/guidelines/clear-space-horizontal.png" alt="Clear space diagram for the horizontal lockup: one A square of empty space on every side">
         </div>
-        <figcaption class="brand-fig-cap"><strong>Clear space.</strong> Keep one A square empty on every side of the lockup. Nothing enters the zone: no text, images, or other logos.</figcaption>
+        <figcaption class="brand-fig-cap"><strong>Clear space.</strong> Keep one A square empty on every side of the lockup. No text, images, or other logos enter that zone.</figcaption>
       </figure>
       <figure class="brand-fig">
         <div class="brand-diagram is-mark">
@@ -143,44 +186,83 @@
         <img src="/brand-assets/logo-sizing.svg" alt="Logo sizing reference at 25, 50 and 100 pixels tall">
       </div>
     </div>
-  </div>
-</section>
 
-{{/* 03 Treatments */}}
-<section class="section" id="treatments">
-  <div class="section-inner">
-    <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">03</span> &middot; Backgrounds</p>
-      <h2 class="md-headline-large section-title">One logo, six backgrounds</h2>
-      <p class="md-body-large section-lede">Use the version with the most contrast on your background. Don&rsquo;t recolor the default to fit; there&rsquo;s a cut for each surface, and every treatment ships both the horizontal and the vertical lockup.</p>
-    </header>
-    <div class="brand-treatments">
-      <div class="brand-panel on-white"><img src="/brand-assets/logos/logo-horizontal.svg" alt="Logo on white"><span class="brand-panel-tag">On white</span></div>
-      <div class="brand-panel on-dark"><img src="/brand-assets/logos/all-white/logo-horizontal-all-white.svg" alt="Logo on dark"><span class="brand-panel-tag">On dark</span></div>
-      <div class="brand-panel on-burgundy"><img src="/brand-assets/logos/on-burgundy/logo-horizontal-on-burgundy.svg" alt="Logo on burgundy"><span class="brand-panel-tag">On burgundy</span></div>
-      <div class="brand-panel on-gold"><img src="/brand-assets/logos/on-gold/logo-horizontal-on-gold.svg" alt="Logo on gold"><span class="brand-panel-tag">On gold</span></div>
-      <div class="brand-panel on-cloud"><img src="/brand-assets/logos/inverse/logo-horizontal-inverse.svg" alt="Logo on busy light background"><span class="brand-panel-tag">Busy light</span></div>
-      <div class="brand-panel on-white"><img src="/brand-assets/logos/all-black/logo-horizontal-all-black.svg" alt="Single-color black logo"><span class="brand-panel-tag">1-color black</span></div>
+    <p class="brand-sub">Do&rsquo;s and don&rsquo;ts</p>
+    <div class="brand-usage">
+      <div class="brand-ucol do">
+        <p class="brand-ucol-head"><span class="brand-ucol-badge" aria-hidden="true">&#10003;</span> Do</p>
+        <ul>
+          <li>Give the logo clear space on every side.</li>
+          <li>Use the variation that fits the background.</li>
+          <li>Scale it up when it looks cramped.</li>
+          <li>Keep gold as a gradient wherever it renders.</li>
+        </ul>
+      </div>
+      <div class="brand-ucol dont">
+        <p class="brand-ucol-head"><span class="brand-ucol-badge" aria-hidden="true">&#10007;</span> Don&rsquo;t</p>
+        <ul>
+          <li>Rotate, stretch, condense, or rebuild the logo.</li>
+          <li>Outline it, blur it, or add a drop shadow.</li>
+          <li>Recolor the mark or swap gold for an off-brand tone.</li>
+          <li>Retype the name in another font, or wrap text around the lockup.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-{{/* 04 Color */}}
-<section class="section section-alt" id="color">
+{{/* 04 Digital identity */}}
+<section class="section section-alt" id="digital">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">04</span> &middot; Color</p>
-      <h2 class="md-headline-large section-title">Signature and supportive</h2>
-      <p class="md-body-large section-lede">Two groups. Signature colors carry the brand; supportive colors give it room to breathe. Click a swatch to copy the hex. Published CMYK builds are in <a href="#print">Print</a>.</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">04</span> &middot; Digital identity</p>
+      <h2 class="md-headline-large section-title">Favicon and app icon</h2>
+      <p class="md-body-large section-lede">The favicon and app icon both use the skyline mark on its own, which stays legible down to 16px. Use the mark, not the full lockup, anywhere the space is square.</p>
+    </header>
+    <div class="brand-treatments">
+      <div class="brand-panel on-white"><img src="/brand-assets/icons/icon.svg" alt="Favicon: skyline mark in full color"><span class="brand-panel-tag">Favicon &middot; rewbihub.com</span></div>
+      <div class="brand-panel on-burgundy"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/icon-on-burgundy.svg" alt="App icon: skyline mark on burgundy"><span class="brand-panel-tag">App icon &middot; burgundy</span></div>
+      <div class="brand-panel on-dark"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/icon-all-white.svg" alt="App icon: mark in white on dark"><span class="brand-panel-tag">App icon &middot; dark mode</span></div>
+    </div>
+
+    <div class="brand-marksizes">
+      <p class="brand-sub">The mark at every size</p>
+      <p class="brand-marksizes-lede">PNGs ship at 16, 32, 48, 64, 128, 256, 512, 1024, and 2048px. <span class="brand-code">favicon.ico</span> bundles 16, 24, 32, 48, and 64.</p>
+      <div class="brand-marksizes-row">
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/2048x2048.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="88" height="88" loading="lazy"><span>2048</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/1024x1024.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="72" height="72" loading="lazy"><span>1024</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/512x512.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="64" height="64" loading="lazy"><span>512</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/256x256.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="48" height="48" loading="lazy"><span>256</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="36" height="36" loading="lazy"><span>128</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/64x64.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/64x64.png" alt="" width="28" height="28" loading="lazy"><span>64</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/48x48.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/64x64.png" alt="" width="24" height="24" loading="lazy"><span>48</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/32x32.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/32x32.png" alt="" width="20" height="20" loading="lazy"><span>32</span></a>
+        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/16x16.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/16x16.png" alt="" width="16" height="16" loading="lazy"><span>16</span></a>
+      </div>
+      <div class="brand-notes-actions">
+        <a class="md-button md-button-tonal" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/favicon.ico" target="_blank" rel="noopener noreferrer">favicon.ico</a>
+        <a class="md-button md-button-tonal" href="/brand-assets/icons/icon.svg" download>Mark SVG</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* 05 Color palette */}}
+<section class="section" id="color">
+  <div class="section-inner">
+    <header class="section-head">
+      <p class="eyebrow"><span class="brand-eyebrow-num">05</span> &middot; Color palette</p>
+      <h2 class="md-headline-large section-title">Signature and supportive colors</h2>
+      <p class="md-body-large section-lede">Signature colors carry the brand. Supportive colors give it room to breathe. Click any swatch to copy the hex. CMYK builds for press are in <a href="#print">Print</a>.</p>
     </header>
 
     <div class="brand-swatch-group">
       <p class="brand-sub">Signature</p>
       <div class="brand-swatch-grid">
-        <button type="button" class="brand-swatch" data-copy="#610D2E"><span class="brand-swatch-fill brand-swatch-fill--dark-wine"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Dark Wine</span><span class="brand-swatch-hex">#610D2E</span><span class="brand-swatch-role">Primary brand</span></span></button>
-        <button type="button" class="brand-swatch" data-copy="#F4C688"><span class="brand-swatch-fill brand-swatch-fill--warm-sand bordered"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Warm Sand</span><span class="brand-swatch-hex">#F4C688</span><span class="brand-swatch-role">Top stop of the logo gradient</span></span></button>
-        <button type="button" class="brand-swatch" data-copy="#986822"><span class="brand-swatch-fill brand-swatch-fill--antique-bronze"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Antique Bronze</span><span class="brand-swatch-hex">#986822</span><span class="brand-swatch-role">Base stop of the gradient, accents</span></span></button>
-        <button type="button" class="brand-swatch" data-copy="#000000"><span class="brand-swatch-fill brand-swatch-fill--black"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Black</span><span class="brand-swatch-hex">#000000</span><span class="brand-swatch-role">Single-ink artwork</span></span></button>
+        <button type="button" class="brand-swatch" data-copy="#610D2E"><span class="brand-swatch-fill brand-swatch-fill--dark-wine"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Dark Wine</span><span class="brand-swatch-hex">#610D2E</span><span class="brand-swatch-role">Primary brand color</span></span></button>
+        <button type="button" class="brand-swatch" data-copy="#F4C688"><span class="brand-swatch-fill brand-swatch-fill--warm-sand bordered"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Warm Sand</span><span class="brand-swatch-hex">#F4C688</span><span class="brand-swatch-role">Top of the logo gradient</span></span></button>
+        <button type="button" class="brand-swatch" data-copy="#986822"><span class="brand-swatch-fill brand-swatch-fill--antique-bronze"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Antique Bronze</span><span class="brand-swatch-hex">#986822</span><span class="brand-swatch-role">Base of the gradient, accents</span></span></button>
+        <button type="button" class="brand-swatch" data-copy="#000000"><span class="brand-swatch-fill brand-swatch-fill--black"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Black</span><span class="brand-swatch-hex">#000000</span><span class="brand-swatch-role">One-ink artwork</span></span></button>
       </div>
     </div>
 
@@ -190,7 +272,7 @@
         <button type="button" class="brand-swatch" data-copy="#F4C688 → #986822"><span class="brand-swatch-fill brand-swatch-fill--gold-gradient bordered"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Gold Gradient</span><span class="brand-swatch-hex">#F4C688 → #986822</span><span class="brand-swatch-role">Warm Sand at the top, Antique Bronze at the base</span></span></button>
         <button type="button" class="brand-swatch" data-copy="#FBE8CF"><span class="brand-swatch-fill brand-swatch-fill--sand-tint bordered"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Sand Tint</span><span class="brand-swatch-hex">#FBE8CF</span><span class="brand-swatch-role">Accent tint</span></span></button>
         <button type="button" class="brand-swatch" data-copy="#813D58"><span class="brand-swatch-fill brand-swatch-fill--wine-mid"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Wine Mid</span><span class="brand-swatch-hex">#813D58</span><span class="brand-swatch-role">Hover on wine surfaces</span></span></button>
-        <button type="button" class="brand-swatch" data-copy="#DFCFD5"><span class="brand-swatch-fill brand-swatch-fill--wine-tint bordered"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Wine Tint</span><span class="brand-swatch-hex">#DFCFD5</span><span class="brand-swatch-role">Wine tint, tags</span></span></button>
+        <button type="button" class="brand-swatch" data-copy="#DFCFD5"><span class="brand-swatch-fill brand-swatch-fill--wine-tint bordered"><span class="brand-swatch-copy">Copy</span></span><span class="brand-swatch-meta"><span class="brand-swatch-name">Wine Tint</span><span class="brand-swatch-hex">#DFCFD5</span><span class="brand-swatch-role">Tags, quiet fills</span></span></button>
       </div>
     </div>
 
@@ -208,48 +290,76 @@
     </div>
 
     <div class="brand-notes">
-      <p>Every signature and supportive color ships with four tints from the brand sheets, and each tone has a swatch PNG. The fourteen tones used in code live in <span class="brand-code">brand-colors/palette.scss</span> as CSS custom properties and SCSS variables with HEX, HSL, and RGB. Gold in the artwork is always the vertical gradient, never a flat tone: flatten to a single stop only where a gradient cannot render, and never substitute an off-brand gold.</p>
+      <p>Every signature and supportive color ships with four tints from the brand sheets, and each tone has a swatch PNG. The fourteen tones used in code live in <span class="brand-code">brand-colors/palette.scss</span> as CSS custom properties and SCSS variables, with HEX, HSL, and RGB. Gold in the artwork is always the vertical gradient, never a flat tone. Flatten to a single stop only where a gradient cannot render, and never substitute an off-brand gold.</p>
     </div>
   </div>
 </section>
 
-{{/* 05 Typography */}}
-<section class="section" id="type">
+{{/* 06 Typography */}}
+<section class="section section-alt" id="type">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">05</span> &middot; Typography</p>
-      <h2 class="md-headline-large section-title">Serif headlines, sans for everything else</h2>
-      <p class="md-body-large section-lede">Two typefaces, both self-hosted as <span class="brand-code">woff2</span>. <strong>Cormorant Garamond</strong> for display and headlines, <strong>Inter</strong> for body and interface copy. The logotype is engraved Trajan-style artwork, so don&rsquo;t re-typeset the name.</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">06</span> &middot; Typography</p>
+      <h2 class="md-headline-large section-title">Cormorant Garamond and Inter</h2>
+      <p class="md-body-large section-lede">Cormorant Garamond is the primary typeface, used for headlines and editorial display. Inter is the secondary typeface, used for subheads, body copy, and interface text. Both are self-hosted as <span class="brand-code">woff2</span>. The logotype is engraved artwork, so never re-typeset the name.</p>
     </header>
     <div class="brand-type-grid">
       <div class="brand-type-card">
         <p class="brand-type-aa serif">Aa</p>
         <div class="brand-type-name">Cormorant Garamond</div>
-        <div class="brand-type-role">Display &middot; headlines &middot; editorial</div>
+        <div class="brand-type-role">Primary &middot; headlines &middot; quotations</div>
         <div class="brand-type-alpha">ABCDEFG &middot; abcdefg &middot; 0123456789</div>
         <div class="brand-type-weights">Medium, Medium Italic, SemiBold, Bold</div>
       </div>
       <div class="brand-type-card">
         <p class="brand-type-aa sans">Aa</p>
         <div class="brand-type-name">Inter</div>
-        <div class="brand-type-role">Subheads &middot; body &middot; UI</div>
+        <div class="brand-type-role">Secondary &middot; subheads &middot; body &middot; UI</div>
         <div class="brand-type-alpha">ABCDEFG &middot; abcdefg &middot; 0123456789</div>
         <div class="brand-type-weights">Regular, Italic, Medium, SemiBold, Bold</div>
       </div>
     </div>
+
+    <p class="brand-sub">Type hierarchy</p>
+    <div class="brand-table-wrap">
+      <table class="brand-table">
+        <thead>
+          <tr><th scope="col">Role</th><th scope="col">Typeface</th><th scope="col">Minimum size</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Headline 1</td><td>Cormorant Garamond SemiBold</td><td class="brand-code">36 / 43 pt</td></tr>
+          <tr><td>Headline 2</td><td>Inter SemiBold</td><td class="brand-code">30 / 36 pt</td></tr>
+          <tr><td>Subhead</td><td>Inter Medium</td><td class="brand-code">12 / 14 pt</td></tr>
+          <tr><td>Body</td><td>Inter Regular</td><td class="brand-code">8 / 12 pt</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="brand-sub">Fallbacks</p>
+    <div class="brand-table-wrap">
+      <table class="brand-table">
+        <thead>
+          <tr><th scope="col">Brand font</th><th scope="col">First fallback</th><th scope="col">Second fallback</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cormorant Garamond</td><td>Playfair Display</td><td>Times New Roman</td></tr>
+          <tr><td>Inter</td><td>Roboto</td><td>Arial</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="brand-notes">
-      <p>Set headlines in Cormorant Garamond to echo the engraved wordmark. Keep running text and interface copy in Inter. Reserve all-caps for short display lines.</p>
+      <p>Use a fallback only when the brand font is unavailable on the device or unsupported by the software. Reserve all-caps for short display lines.</p>
     </div>
   </div>
 </section>
 
-{{/* 06 Print */}}
-<section class="section section-alt" id="print">
+{{/* 07 Print */}}
+<section class="section" id="print">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">06</span> &middot; Print</p>
-      <h2 class="md-headline-large section-title">Process-CMYK files for press</h2>
-      <p class="md-body-large section-lede">Send these to a printer or a graphic designer. Color is written directly as <span class="brand-code">DeviceCMYK</span> ink values, with no RGB objects and no ICC profiles left in the file. The ink builds come from the REWBI Signature Colors sheet, not a generic conversion.</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">07</span> &middot; Print</p>
+      <h2 class="md-headline-large section-title">Press-ready CMYK files</h2>
+      <p class="md-body-large section-lede">Send these to a printer or a graphic designer. Color is written directly as <span class="brand-code">DeviceCMYK</span> ink values, with no RGB objects and no ICC profiles left in the file. The ink builds come from the REWBI signature color sheet, not a generic conversion.</p>
     </header>
 
     <ul class="brand-spec-band">
@@ -261,7 +371,7 @@
       <li class="brand-spec">
         <span class="brand-spec-num">100%&hairsp;K</span>
         <span class="brand-spec-label">Black</span>
-        <span class="brand-spec-sub">Single-ink safe. White is zero ink</span>
+        <span class="brand-spec-sub">One-ink safe. White is zero ink</span>
       </li>
       <li class="brand-spec">
         <span class="brand-spec-num">0.5in</span>
@@ -291,7 +401,7 @@
       </table>
     </div>
 
-    <p class="brand-sub">The six files</p>
+    <p class="brand-sub">Choose a file by background</p>
     <div class="brand-print-grid">
       <a class="brand-print" href="https://raw.githubusercontent.com/rewbihub/brand/main/print/logo.pdf" target="_blank" rel="noopener noreferrer">
         <span class="brand-print-name">logo.pdf</span>
@@ -305,7 +415,7 @@
       </a>
       <a class="brand-print" href="https://raw.githubusercontent.com/rewbihub/brand/main/print/logo-all-black.pdf" target="_blank" rel="noopener noreferrer">
         <span class="brand-print-name">logo-all-black.pdf</span>
-        <span class="brand-print-use">Single-color print, engraving, stamping</span>
+        <span class="brand-print-use">One-color print, engraving, stamping</span>
         <span class="brand-print-cta">Download PDF</span>
       </a>
       <a class="brand-print" href="https://raw.githubusercontent.com/rewbihub/brand/main/print/logo-inverse.pdf" target="_blank" rel="noopener noreferrer">
@@ -330,21 +440,21 @@
       <ul>
         <li><strong>Gold is a gradient,</strong> not a flat tone: Warm Sand at the top falling to Antique Bronze at the base. Hold the gradient wherever the process allows, and use a flat stop only where a gradient cannot render.</li>
         <li><strong>On black,</strong> these files use 100% K rather than a rich black, because the black here is fine linework where four-color black invites registration problems. Ask if you need a rich-black version for a large solid field.</li>
-        <li>Clear space on all sides equals the height of the mark&rsquo;s shortest tower. One-ink jobs: <span class="brand-code">logo-all-black.pdf</span> at 100% K, or <span class="brand-code">logo-all-white.pdf</span> as a knockout.</li>
-        <li>Foil, letterpress, deboss, and engraving start from the all-black or all-white file. Pages carry no crop marks or bleed, and no embedded output intent. Add one at the press if the job requires PDF/X.</li>
-        <li>Three colors used only by the <strong>inverse</strong> treatment sit outside the signature sheet and were converted arithmetically: <span class="brand-code">#C69755</span> (0/24/58/22), <span class="brand-code">#9A3454</span> (0/66/45/40), and <span class="brand-code">#FAF6EF</span> (0/2/4/2). Soft-proof them if you run that treatment.</li>
+        <li>Clear space on all sides equals the height of the mark&rsquo;s shortest tower. For one-ink jobs use <span class="brand-code">logo-all-black.pdf</span> at 100% K, or <span class="brand-code">logo-all-white.pdf</span> as a knockout.</li>
+        <li>Foil, letterpress, deboss, and engraving start from the all-black or all-white file. Pages carry no crop marks, no bleed, and no embedded output intent. Add one at the press if the job requires PDF/X.</li>
+        <li>Three colors used only by the <strong>inverse</strong> file sit outside the signature sheet and were converted arithmetically: <span class="brand-code">#C69755</span> (0/24/58/22), <span class="brand-code">#9A3454</span> (0/66/45/40), and <span class="brand-code">#FAF6EF</span> (0/2/4/2). Soft-proof them if you use that file.</li>
       </ul>
     </div>
   </div>
 </section>
 
-{{/* 07 Downloads */}}
+{{/* 08 Downloads */}}
 <section class="section section-alt" id="downloads">
   <div class="section-inner">
     <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">07</span> &middot; Assets</p>
-      <h2 class="md-headline-large section-title">Download the logo files</h2>
-      <p class="md-body-large section-lede">Every file below is served straight from the brand repository on GitHub, so it is always the current version. The repo also holds the editable source artwork.</p>
+      <p class="eyebrow"><span class="brand-eyebrow-num">08</span> &middot; Downloads</p>
+      <h2 class="md-headline-large section-title">Get the logo files</h2>
+      <p class="md-body-large section-lede">Every file below comes straight from the brand repository on GitHub, so it is always the current version. The repo also holds the editable source artwork.</p>
     </header>
     <div class="brand-download-grid">
 
@@ -352,7 +462,7 @@
         <div class="brand-download-preview"><img src="/brand-assets/logos/logo-horizontal.svg" alt="Horizontal lockup preview"></div>
         <div>
           <div class="brand-download-title">Horizontal lockup</div>
-          <div class="brand-download-meta">Default &middot; full color</div>
+          <div class="brand-download-meta">Core logo &middot; full color</div>
         </div>
         <div class="brand-download-links">
           <a class="md-button md-button-tonal" href="/brand-assets/logos/logo-horizontal.svg" download>SVG</a>
@@ -365,7 +475,7 @@
         <div class="brand-download-preview"><img src="/brand-assets/logos/logo-vertical.svg" alt="Vertical lockup preview"></div>
         <div>
           <div class="brand-download-title">Vertical lockup</div>
-          <div class="brand-download-meta">Tight &amp; centered layouts</div>
+          <div class="brand-download-meta">Alternative &middot; centered layouts</div>
         </div>
         <div class="brand-download-links">
           <a class="md-button md-button-tonal" href="/brand-assets/logos/logo-vertical.svg" download>SVG</a>
@@ -415,10 +525,10 @@
       </div>
 
       <div class="brand-download">
-        <div class="brand-download-preview"><img src="/brand-assets/logos/all-black/logo-horizontal-all-black.svg" alt="Single-color black lockup preview"></div>
+        <div class="brand-download-preview"><img src="/brand-assets/logos/all-black/logo-horizontal-all-black.svg" alt="One-color black lockup preview"></div>
         <div>
-          <div class="brand-download-title">1-color black</div>
-          <div class="brand-download-meta">Fax, stamp, single-ink print</div>
+          <div class="brand-download-title">One-color black</div>
+          <div class="brand-download-meta">Stamp, engraving, single-ink print</div>
         </div>
         <div class="brand-download-links">
           <a class="md-button md-button-tonal" href="/brand-assets/logos/all-black/logo-horizontal-all-black.svg" download>Horizontal</a>
@@ -428,25 +538,6 @@
 
     </div>
 
-    <div class="brand-marksizes">
-      <p class="brand-sub">The mark, square, at every size</p>
-      <p class="brand-marksizes-lede">PNGs ship at 16, 32, 48, 64, 128, 256, 512, 1024, and 2048px. <span class="brand-code">favicon.ico</span> bundles 16, 24, 32, 48, and 64.</p>
-      <div class="brand-marksizes-row">
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/2048x2048.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="88" height="88" loading="lazy"><span>2048</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/1024x1024.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="72" height="72" loading="lazy"><span>1024</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/512x512.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="64" height="64" loading="lazy"><span>512</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/256x256.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="48" height="48" loading="lazy"><span>256</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/128x128.png" alt="" width="36" height="36" loading="lazy"><span>128</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/64x64.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/64x64.png" alt="" width="28" height="28" loading="lazy"><span>64</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/48x48.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/64x64.png" alt="" width="24" height="24" loading="lazy"><span>48</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/32x32.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/32x32.png" alt="" width="20" height="20" loading="lazy"><span>32</span></a>
-        <a class="brand-marksize" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/16x16.png" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/rewbihub/brand/main/icons/16x16.png" alt="" width="16" height="16" loading="lazy"><span>16</span></a>
-      </div>
-      <div class="brand-notes-actions">
-        <a class="md-button md-button-tonal" href="https://raw.githubusercontent.com/rewbihub/brand/main/icons/favicon.ico" target="_blank" rel="noopener noreferrer">favicon.ico</a>
-      </div>
-    </div>
-
     <div class="brand-source-note">
       <p>Additional sizes, formats, and editable source files are in the REWBI brand repository on GitHub.</p>
       <a class="md-button md-button-outlined" href="https://github.com/rewbihub/brand" target="_blank" rel="noopener noreferrer">Open the brand repo<span class="visually-hidden"> (opens in new window)</span></a>
@@ -454,39 +545,8 @@
   </div>
 </section>
 
-{{/* 08 Usage */}}
-<section class="section" id="usage">
-  <div class="section-inner">
-    <header class="section-head">
-      <p class="eyebrow"><span class="brand-eyebrow-num">08</span> &middot; Usage</p>
-      <h2 class="md-headline-large section-title">Dos and don&rsquo;ts</h2>
-      <p class="md-body-large section-lede">Follow these to keep the logo consistent everywhere it appears.</p>
-    </header>
-    <div class="brand-usage">
-      <div class="brand-ucol do">
-        <p class="brand-ucol-head"><span class="brand-ucol-badge" aria-hidden="true">&#10003;</span> Do</p>
-        <ul>
-          <li>Give the logo clear space on every side.</li>
-          <li>Use the treatment that fits the background.</li>
-          <li>Scale it up when it looks cramped.</li>
-          <li>Keep gold as a gradient wherever it renders.</li>
-        </ul>
-      </div>
-      <div class="brand-ucol dont">
-        <p class="brand-ucol-head"><span class="brand-ucol-badge" aria-hidden="true">&#10007;</span> Don&rsquo;t</p>
-        <ul>
-          <li>Recolor the mark or change the gold to an off-brand tone.</li>
-          <li>Stretch, condense, rotate, or rebuild it.</li>
-          <li>Retype the name in another font.</li>
-          <li>Place it on a busy or low-contrast background.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 {{/* 09 Naming */}}
-<section class="section section-alt" id="naming">
+<section class="section" id="naming">
   <div class="section-inner">
     <header class="section-head">
       <p class="eyebrow"><span class="brand-eyebrow-num">09</span> &middot; Naming</p>

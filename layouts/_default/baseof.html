@@ -39,12 +39,9 @@
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="twitter:image" content="{{ "/opengraph.png" | absURL }}">
 
-{{ with resources.Get "logos/favicon.svg" }}
-  {{ $favicon := . | fingerprint }}
-<link rel="icon" href="{{ $favicon.RelPermalink }}" type="image/svg+xml">
-{{ end }}
-<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="REWBI">
 <link rel="mask-icon" href="/mask-icon.svg" color="#610D2E">
